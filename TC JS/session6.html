@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 6</title>
+</head>
+
+<body>
+
+    <script>
+        // // Declaring an array of numbers
+        // let numbers = [1, 2, 3, 4, 5];
+
+        // // Declaring an array of strings
+        // let fruits = ["apple", "banana", "cherry"];
+
+        // // Declaring an empty array
+        // let emptyArray = [];
+
+        // // Using the Array Constructor:
+        // let colors = new Array("red", "green", "blue");
+        // console.log(colors);
+
+
+        // Accessing Arrays:
+        // let fruits = ["apple", "banana", "cherry"];
+        //               0         1         2
+        // console.log(fruits);
+        // console.log(fruits[2]);
+
+        // // Accessing elements by index
+        // let firstFruit = fruits[0];
+        // let secondFruit = fruits[1];
+
+        // // Modifying elements
+        // fruits[2] = "strawberry"; // Update the third element to "strawberry"
+        // console.log(fruits);
+
+        // // Adding elements to the end
+        // fruits.push("orange"); // Adds "orange" to the end
+        // console.log(fruits);
+
+
+        // // Removing elements from the end
+        // let removedFruit = fruits.pop(); // Removes and returns "orange"
+        // console.log(fruits);
+        // console.log(removedFruit);
+
+
+        // ARRAY METHODS:
+        // .toString(): method converts an array to a comma-separated string of its elements.
+        // let fruits = ["apple", "banana", "cherry"];
+        // let fruitString = fruits.toString(); // "apple,banana,cherry"
+        // console.log(fruitString);
+        // console.log(fruits);
+
+        // .join(separator): joins all elements of an array into a single string, using the specified separator between each element.
+        // let fruits = ["apple", "banana", "cherry"];
+        // let fruitString = fruits.join(" - "); // "apple - banana - cherry"
+        // console.log(fruitString);
+
+        // .pop(): The pop() method removes and returns the last element of an array.
+        // let fruits = ["apple", "banana", "cherry"];
+        // let removedFruit = fruits.pop();
+
+        // .push(element1, element2, ...): The push() method adds one or more elements to the end of an array and returns the new length of the array.
+        // let fruits = ["apple", "banana"];
+        // let newLength = fruits.push("cherry", "date"); // Adds two elements, newLength will be 4
+        // console.log(newLength);
+        // console.log(fruits);
+        // console.log(fruits.length);
+
+        // .shift(): The shift() method removes and returns the first element of an array.
+        // let fruits = ["apple", "banana", "cherry"];
+        // let removedFruit = fruits.shift(); // "apple", and "fruits" becomes ["banana", "cherry"]
+        // console.log(fruits, "shifted array");
+
+        // .unshift(element1, element2, ...): The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+        // let fruits = ["banana", "cherry"];
+        // let newLength = fruits.unshift("apple", "date"); // Adds two elements, newLength will be 4
+        // console.log(fruits, "unshifted array");
+
+        // .concat(array2): The concat() method combines two or more arrays and returns a new array without modifying the original arrays.
+        // let fruits = ["apple", "banana"];
+        // let moreFruits = ["cherry", "date"];
+        // let combinedArray = fruits.concat(moreFruits); // ["apple", "banana", "cherry", "date"]
+        // console.log(combinedArray, "COMBINED ARRAY");
+
+        // .splice(index, deleteCount, item1, item2, ...): The splice() method can be used to add, remove, or replace elements in an array at a specified index. It returns an array of removed elements.
+
+        // let fruits = ["apple", "banana", "cherry"];
+        // let removed = fruits.splice(1, 0, "lemon", "kiwi"); // Inserts "lemon" and "kiwi" at index 1
+        // console.log(fruits);
+        // console.log(removed);
+        // fruits becomes ["apple", "lemon", "kiwi", "banana", "cherry"];
+        // removed is an empty array
+
+        // .sort(): The sort() method sorts the elements of an array in place and returns the sorted array. By default, it sorts elements as strings.
+        // let fruits = ["banana", "apple", "cherry"];
+        // fruits.sort(); // ["apple", "banana", "cherry"];
+        // console.log(fruits);
+
+        // .reverse(): The reverse() method reverses the order of elements in an array in place and returns the reversed array.
+        // let fruits = ["apple", "banana", "cherry"];
+        // fruits.reverse(); // ["cherry", "banana", "apple"];
+
+        // ACCESSING AN OBJECT:
+        // Dot Notation: You can use dot notation to access object properties when you know the property name in advance.
+        // let person = {
+        //     name: "John",
+        //     age: 30,
+        //     city: "New York"
+        // };
+        // console.log(person.name);
+        // console.log(person.age);
+
+        // Bracket Notation: Bracket notation allows you to access object properties using a variable or when the property name contains special characters or spaces.
+        // let person = {
+        //     name: "John",
+        //     age: 30,
+        //     city: "New York"
+        // };
+        // let personName = "age";
+        // console.log(person[personName]);
+
+        // For...In Loop: You can use a for...in loop to iterate over all the properties of an object and access them dynamically.
+        // let person = {
+        //     name: "John",
+        //     age: 30,
+        //     city: "New York"
+        // };
+
+        // for (let key in person) {
+        //     console.log(key + ": " + person[key]);
+        // }
+
+        // Object Destructuring: You can use object destructuring to extract specific properties from an object and assign them to variables.
+        // let person = {
+        //     name: "John",
+        //     age: 30,
+        //     city: "New York",
+        //     gender: "M",
+        // };
+
+        // let { name, age } = person;
+        // console.log(name); // "John"
+        // console.log(age);  // 30
+
+        // 1. Array Inside Array:
+        // let matrix = [
+        //     [1, 2, 3],
+        //     [4, 5, 6],
+        //     [7, 8, 9]
+        // ];
+        // Accessing element 6
+        // {
+        // console.log(matrix[1][2]);
+        // }
+
+        // 2. Object Inside Object:
+        // let person = {
+        //     name: "John",
+        //     address: {
+        //         street: "123 Main St",
+        //         city: "New York",
+        //     },
+        //     family: [
+        //         {
+        //             brother: "Max",
+        //             Sister: "Stacy"
+        //         },
+        //         {
+        //             mother: "Henry",
+        //             father: "Steve"
+        //         }
+        //     ]
+        // };
+        // console.log(person.family[0].Sister);
+        // Accessing the city property within the address object
+        // {
+        //     console.log(person.address.city);
+        // }
+
+        // 3. Array Inside Object:
+        // let student = {
+        //     name: "Alice",
+        //     grades: [85, 92, 78, 95]
+        // };
+        // Accessing the third grade (78)
+        // {
+        //     console.log(student.grades[2]);
+        // }
+
+        // 4. Object Inside Array:
+        // let books = [
+        //     { title: "Book 1", author: "Author 1" },
+        //     { title: "Book 2", author: "Author 2" }
+        // ];
+        // console.log(books[0].title); // Accessing the title of the first book
+
+        // Task : Object Inside Object
+        // Declare an object representing a car, and within that object, have another object representing its engine. Access the horsepower of the engine.
+
+        // Task : Array Inside Object
+        // Create an object representing a classroom and include an array of student names. Access the name of the second student in the list.
+
+        // var classroom = {
+        //     students: ["sita", "sofiya", "Hemali"]
+        // }
+
+        // Task : Object Inside Array
+        // Create an array of objects where each object represents a city with properties like "name" and "population." Access the population of the third city in the array.
+
+
+        // let books = [
+        //     {
+        //         title: "Book 1",
+        //         author: "Author 1",
+        //         genres: ["Science Fiction", "Adventure"]
+        //     },
+        //     {
+        //         title: "Book 2",
+        //         author: "Author 2",
+        //         genres: ["Fantasy", "Young Adult"]
+        //     },
+        //     {
+        //         title: "Book 3",
+        //         author: "Author 3",
+        //         genres: ["Mystery", "Thriller"]
+        //     },
+        //     {
+        //         title: "Book 4",
+        //         author: "Author 4",
+        //         genres: ["Historical Fiction", "Romance"]
+        //     },
+        //     // Add more books here
+        // ];
+
+        // Accessing the genres of the second book
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </script>
+
+</body>
+
+</html>

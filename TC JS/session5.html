@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS session 5</title>
+</head>
+
+<body>
+
+    <input type="text" placeholder="Enter a number here" id="ip" />
+    <input type="text" placeholder="Enter a year here" id="yearIp" />
+    <button onclick="fun1()">Click me</button>
+    <button onclick="isEvenOrOdd()">check even or odd</button>
+    <button onclick="checkDays()">check days in month</button>
+
+
+    <div style="margin-top: 50px; background-color: coral;">
+        <h1>BMI Calculator</h1>
+        <label for="weight">Enter your weight (kg):</label>
+        <input type="number" id="weight" placeholder="Weight in kg">
+        <br>
+        <label for="height">Enter your height (m):</label>
+        <input type="number" id="height" placeholder="Height in meters">
+        <br>
+        <button onclick="calculateBMI()">Calculate BMI</button>
+        <br>
+        <div id="result"></div>
+    </div>
+
+    <div style="margin-top: 50px;">
+        <h1>Grade calculator</h1>
+        <button onclick="calculateGrade()">click to check your grade</button>
+    </div>
+
+    <h1>Temperature Converter</h1>
+    <label for="celsiusInput">Enter the temperature in Celsius:</label>
+    <input type="number" id="celsiusInput" placeholder="Temperature in Celsius">
+    <button onclick="temperatureConverter()">Convert</button>
+    <br>
+    <div id="result"></div>
+
+    <script>
+        // function isEvenOrOdd() {
+        //     var inputValue = Number(document.getElementById("ip").value);
+        //     var resultElement = document.getElementById("ele");
+
+        //     if (inputValue % 2 === 0) {
+        //         console.log("number is even");
+        //     } else {
+        //         console.log("number is odd");
+        //     }
+        // }
+
+        function fun1() {
+            var inputValue = Number(document.getElementById("ip").value);
+
+            if (inputValue) {
+                console.log("temperature is below absolute zero");
+            } if (inputValue > -273 && inputValue < 0) {
+                console.log("temperature is below freezing");
+            } if (inputValue > 0 && inputValue < 100) {
+                console.log("temperature is normal");
+            } else {
+                console.log("temperature is above boiling point");
+            }
+        }
+
+        // BMI Calculator
+        // Bmi = weight(kg) / (height(m))2
+        // BMI Categories:
+        // Underweight = <18.5
+        // Normal weight = 18.5-24.9
+        // Overweight = 25- 29.9
+        // Obesity = BMI of 30 or greater
+
+
+        function calculateBMI() {
+            // Get the user's input
+            var weight = parseFloat(document.getElementById("weight").value);
+            var height = parseFloat(document.getElementById("height").value);
+
+            // ParseFloat takes string as input and gives a floting point number. it will neglect spaces and string after the digits. if 42.5zzz then 42.5 will be th output
+
+            // ParseInt will give the whole number. if 42.5zzz then 42 will be th output
+
+            // Check if the input is valid
+            if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+                document.getElementById("result").innerHTML = "Please enter valid values for weight and height.";
+                return; //It breaks the chain of events and function is stopped here only.
+            }
+
+            // Calculate BMI
+            var bmi = weight / (height * height); //Try to use power operator here **
+
+            // Determine the BMI category. Create variables as discussed in the class.
+            var category = "";
+            if (bmi < 18.5) {
+                category = "Underweight";
+            } else if (bmi >= 18.5 && bmi <= 24.9) {
+                category = "Normal weight";
+            } else if (bmi >= 25 && bmi <= 29.9) {
+                category = "Overweight";
+            } else {
+                category = "Obesity";
+            }
+
+            // Display the result
+            var resultText = "Your BMI is " + bmi.toFixed(2) + " (" + category + ")";
+            document.getElementById("result").innerHTML = resultText;
+        }
+
+        // Find number of days in a given month and year
+        // ● If month is outside the range of 1 and 12 print “Invalid month”
+        // ● If month is equal to 2 i.e, February print “29 days ” if it is leap year
+        // else print “28 days”
+        // ● Else if month is equal to 4, 6, 9, 11 print “30 days”
+        // ● Else print “31 days”
+
+        function checkDays() {
+            var inputValue = Number(document.getElementById("ip").value);
+            var yearValue = Number(document.getElementById("yearIp").value);
+
+            if (inputValue >= 1 && inputValue <= 12) {
+                console.log("valid year");
+
+                if (inputValue === 2) { //Feb month leap consideration
+                    if (yearValue % 4 === 0) {
+                        console.log("28 days");
+                    } else {
+                        console.log("29 days");
+                    }
+                } else if (inputValue === 4 || inputValue === 6 || inputValue === 9 || inputValue === 11) {
+                    console.log("30 days");
+                } else {
+                    console.log("31 days");
+                }
+            }
+            else {
+                console.log("invalid year")
+            }
+        }
+
+
+        // EXERCISE : Grade Finder
+        // Create a function to calculate the grade of the students ( get student name
+        // and marks from the user)
+        // ● “S grade” if marks is between 90 and 100
+        // ● “A grade” if marks is between 80 and 90
+        // ● “B grade” if marks is between 70 and 80
+        // ● “C grade” if marks is between 60 and 70
+        // ● “D grade” if marks is between 50 and 60
+        // ● “E grade” if marks is between 40 and 50
+        // ● “F grade” if marks is between 0 and 40
+        // ● Else display invalid marks
+
+        function calculateGrade() {
+            // Get student name and marks from the user. create inputs and try to take values from them. 
+            var studentName = prompt("Enter student name:");
+            var marks = parseFloat(prompt("Enter student marks:"));
+
+            // Check if the input is valid
+            if (isNaN(marks)) {
+                console.log("Invalid marks. Please enter a valid numeric value.");
+                return;
+            }
+
+            // Calculate the grade based on the marks
+            var grade = "";
+            if (marks >= 90 && marks <= 100) {
+                grade = "S";
+            } else if (marks >= 80 && marks < 90) {
+                grade = "A";
+            } else if (marks >= 70 && marks < 80) {
+                grade = "B";
+            } else if (marks >= 60 && marks < 70) {
+                grade = "C";
+            } else if (marks >= 50 && marks < 60) {
+                grade = "D";
+            } else if (marks >= 40 && marks < 50) {
+                grade = "E";
+            } else if (marks >= 0 && marks < 40) {
+                grade = "F";
+            } else {
+                grade = "Invalid marks";
+            }
+
+            // Display the result. This is concactenation. But what if user puts marks > 100? following line must not get printed then.
+            console.log(studentName + " has received a grade of " + grade + " for " + marks + " marks.");
+        }
+
+        // Call the function to calculate the grade
+        calculateGrade();
+
+
+        // EXERCISE: Ask the user to enter a temperature in celsius. The program
+        // should print a message based on the temperature
+        // ○ If the temperature is less than -273.15, print that the temperature
+        // is invalid because it is below absolute zero.
+        // ○ If it is exactly -273.15, print that the temperature is absolute 0.
+        // ○ If the temperature is between -273.15 and 0, print that the
+        // temperature is below freezing.
+        // ○ If it is 0, print that the temperature is at the freezing point.
+        // ○ If it is between 0 and 100, print that the temperature is in the
+        // normal range.
+        // ○ If it is 100, print that the temperature is at the boiling point.
+        // ○ If it is above 100, print that the temperature is above the boiling
+        // point.
+
+        function temperatureConverter() {
+            // Get temperature in Celsius from the input field
+            var celsiusInput = document.getElementById("celsiusInput").value;
+            var celsius = parseFloat(celsiusInput); //remember the difference between parseFloat and parseInt
+
+            // Check if the input is valid
+            if (isNaN(celsius)) {
+                document.getElementById("result").innerHTML = "Invalid input. Please enter a valid numeric temperature.";
+                return;
+            }
+
+            // Convert Celsius to Fahrenheit
+            var fahrenheit = (celsius * 9 / 5) + 32;
+
+            // Determine the temperature message based on the range
+            var message = "";
+            if (celsius < -273.15) {
+                message = "The temperature is invalid because it is below absolute zero.";
+            } else if (celsius === -273.15) {
+                message = "The temperature is absolute 0.";
+            } else if (celsius < 0) {
+                message = "The temperature is below freezing.";
+            } else if (celsius === 0) {
+                message = "The temperature is at the freezing point.";
+            } else if (celsius < 100) {
+                message = "The temperature is in the normal range.";
+            } else if (celsius === 100) {
+                message = "The temperature is at the boiling point.";
+            } else {
+                message = "The temperature is above the boiling point.";
+            }
+
+            // Display the result
+            var resultText = "Celsius: " + celsius + "°C<br>Fahrenheit: " + fahrenheit + "°F<br>" + message;
+            document.getElementById("result").innerHTML = resultText;
+        }
+
+    </script>
+</body>
+
+</html>

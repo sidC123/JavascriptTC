@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session7</title>
+    <link rel="stylesheet" href="session7.css">
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+
+    <!-- <div>
+        <ul id="imageList">
+            <li id="puppy">
+                <img src="https://images.pexels.com/photos/1851164/pexels-photo-1851164.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="puppy">
+            </li>
+            <li id="monkey">
+                <img src="https://images.pexels.com/photos/3493730/pexels-photo-3493730.jpeg?auto=compress&cs=tinysrgb&w=600"
+                    alt="monkey">
+            </li>
+            <li id="panda">
+                <img src="https://images.pexels.com/photos/3608263/pexels-photo-3608263.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="panda">
+            </li>
+            <li id="fox">
+                <img src="https://images.pexels.com/photos/2295744/pexels-photo-2295744.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"
+                    alt="fox">
+            </li>
+            <li>
+                <a href="https://www.google.com" id="link" target="_blank">CLICK ME TO VISIT GOOGLE</a>
+            </li>
+        </ul>
+    </div> -->
+
+    <!-- <div class="button-container" id="buttonContainer">
+        <button class="button">Button 1</button>
+        <button class="button">Button 2</button>
+        <button class="button">Button 3</button>
+        <button class="button">Button 4</button>
+        <button class="button">Button 5</button>
+        <div class="box"></div>
+    </div> -->
+
+    <!-- <div id="mousemoveContainer">
+        <p id="mousemoveResult">Move your mouse here</p>
+    </div> -->
+
+    <!-- <div id="mouseoverContainer">
+        <p id="mouseoverResult">Hover over this area</p>
+        <button>Child Element</button>
+    </div> -->
+
+    <div class="accordion">
+        <h1>Accordions</h1>
+        <br>
+
+        <div class="accordion-header">Section 1</div>
+        <div class="accordion-panel activeAcc">
+            <p>Content for Section 1 goes here. Content for Section 1 goes here. Content for Section 1 goes here. </p>
+        </div>
+
+        <div class="accordion-header">Section 2</div>
+        <div class="accordion-panel">
+            <p>Content for Section 1 goes here. Content for Section 1 goes here. Content for Section 1 goes here.</p>
+        </div>
+
+        <div class="accordion-header">Section 3</div>
+        <div class="accordion-panel">
+            <p>Content for Section 1 goes here. Content for Section 1 goes here. Content for Section 1 goes here.</p>
+        </div>
+    </div>
+
+    <!-- <button onclick="fun(this);" title="button1">BTN 1</button>
+    <button onclick="fun(this);" title="button2">BTN 2</button>
+    <button onclick="fun(this);" title="button3">BTN 3</button>
+    <button onclick="fun(this);" title="button4">BTN 4</button>
+    <button onclick="fun(this);" title="button5">BTN 5</button> -->
+
+    <script>
+
+        // function fun(a) {
+        //     console.log(a);
+        //     a.style.color = "red";
+        //     alert(a.title)
+        //     alert(a.getAttribute("title"));
+        // }
+
+        //Events:
+
+        // preventDefault
+        // timestamp
+        // target
+        // srcElement
+
+        // document.getElementById('monkey').addEventListener('click', function (e) {
+        //     console.log(e.target.width);
+        //     console.log(e);
+        //     alert('monkey');
+        // })
+
+        // document.getElementById('imageList').addEventListener('click', function (e) {
+        //     console.log("UL is Clicked");
+        // }, false)
+
+        // document.getElementById('puppy').addEventListener('click', function (e) {
+        //     console.log("Puppy img is Clicked");
+        //     e.stopPropagation();
+        // }, false)
+
+        // document.getElementById('link').addEventListener('click', function (e) {
+        //     e.preventDefault();
+        //     console.log(e, 'URL is clicked');
+        // }, false)
+
+        // Event propagation - third parameter true/false
+        // Bubbling - Child to Parent
+        // Stop propogation? e.stopPropagation();
+        // e.preventDefault(): to prevent the default behaviour of the element.
+
+        // document.querySelector('#imageList').addEventListener('click', function (e) {
+        //     console.log("image list is clicked");
+        //     console.log(e.target);
+        //     console.log(e.target.parentNode);
+
+        //     if (e.target.tagName === 'IMG') {
+        //         let removeEle = e.target.parentNode
+        //         removeEle.remove();
+        //     }
+        // })
+
+
+        // document.getElementsByTagName('BUTTON')[0].addEventListener('click', function (e) {
+        //     alert("HELLO")
+        // });
+
+        // document.querySelector('#buttonContainer').addEventListener('click', function (e) {
+        //     if (e.target.tagName === 'BUTTON') {
+        //         const clickedBtn = e.target;
+        //         console.log(clickedBtn);
+
+        //         const buttons = this.querySelectorAll('button');
+        //         clickedBtn.style.backgroundColor = "red"
+        //     }
+        // })
+
+        // ONLY ONE BUTTON SHOULD BE ACTIVE AMONG ALL:
+        // let previouslyClicked = null;
+        // document.querySelector('#buttonContainer').addEventListener('click', function (e) {
+        //     if (e.target.tagName === 'BUTTON') {
+        //         const clickedBtn = e.target;
+
+        //         console.log(clickedBtn);
+
+        //         if (previouslyClicked) {
+        //             previouslyClicked.classList.remove('active');
+        //         }
+
+        //         clickedBtn.classList.add('active');
+
+        //         previouslyClicked = clickedBtn;
+        //     }
+        // })
+
+        // document.querySelector('.box').addEventListener('click', function (e) {
+        //     alert(e.type);
+        //     console.log(e.type);
+        // })
+
+        // document.querySelector('.box').addEventListener('mousedown', function (e) {
+        //     console.log(e.type);
+        //     alert(e.type);
+        // })
+
+        // document.querySelector('.box').addEventListener('mouseup', function (e) {
+        //     console.log(e.type);
+        //     alert(e.type);
+        // })
+
+        // click:
+        // The click event is triggered when a mouse button(usually the left button) is pressed and released on an element.
+        // It represents a complete mouse click action, which includes both pressing and releasing the mouse button.
+        // The click event is often used for actions like opening links, submitting forms, or triggering user interactions.
+        // It is suitable for actions where you want to respond to a full mouse click action, such as navigating to a different page or executing a specific function.
+
+        // mousedown:
+        // The mousedown event is triggered when a mouse button (left, right, or middle) is initially pressed down over an element.
+        // It represents the start of a mouse interaction but does not necessarily indicate that the button has been released.
+        // The mousedown event is commonly used for tasks that require tracking ongoing mouse interactions, like dragging and dropping elements or creating custom mouse behaviors.
+        // It can be used in combination with other mouse events, such as mousemove and mouseup, to create complex interactions.
+
+        // document.querySelector('.box').addEventListener('mouseup', function (e) {
+        //     alert(e.type)
+        // })
+
+        // document.querySelector('.box').addEventListener('mouseenter', function (e) {
+        //     alert(e.type)
+        // })
+
+        // document.querySelector('.box').addEventListener('mouseleave', function (e) {
+        //     alert(e.type)
+        // })
+
+        //mousemove:
+        // const mousemoveContainer = document.getElementById('mousemoveContainer');
+        // const mousemoveResult = document.getElementById('mousemoveResult');
+        // mousemoveContainer.addEventListener('mousemove', function (event) {
+        //     const randomNumber = Math.floor(Math.random() * 100);
+        //     mousemoveResult.textContent = `Random Number: ${randomNumber}`;
+        // });
+
+
+        //mouseover and mouseout:
+        // const mouseoverContainer = document.getElementById('mouseoverContainer');
+        // const mouseoverResult = document.getElementById('mouseoverResult');
+
+        // mouseoverContainer.addEventListener('mouseover', function (e) {
+        //     const randomNumber = Math.floor(Math.random() * 100);
+        //     mouseoverResult.textContent = `Random Number: ${randomNumber}`;
+        // });
+
+        // mouseoverContainer.addEventListener('mouseout', function (e) {
+        //     mouseoverResult.textContent = 'Hover over this area';
+        // });
+
+        //click: Fired when the mouse is clicked on an element.
+        //mousedown: Fired when the mouse button is pressed down over an element.
+        //mouseup: Fired when the mouse button is released over an element.
+        //mousemove: Fired when the mouse pointer moves within an element.
+        //mouseenter and mouseleave: Fired when the mouse enters or leaves an element.
+        //mouseover and mouseout: Similar to mouseenter and mouseleave, but they also trigger when entering child elements.
+
+
+
+
+        // Get all accordion headers and panels
+        const accordionHeaders = document.querySelectorAll('.accordion-header');
+        const accordionPanels = document.querySelectorAll('.accordion-panel');
+
+        // Add click event listeners to each accordion header
+        accordionHeaders.forEach((header, index) => {
+            header.addEventListener('click', () => {
+                // Removing the active class from all panels to open only one accordion at a time.
+                accordionPanels.forEach(panel => {
+                    panel.classList.remove('activeAcc');
+                });
+                // Toggle the active class to show/hide the panel
+                accordionPanels[index].classList.toggle('activeAcc');
+            });
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

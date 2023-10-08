@@ -1,0 +1,541 @@
+// What is JavaScript ?
+
+    // Different ways of writing JavaScript
+    // - Inline JavaScript
+    // - Internal JavaScript
+    // - External JavaScript
+
+    // Different types of JavaScript
+    // Client-Side JavaScript: runs in a web browser, primarily used for enhancing the interactivity and functionality of web pages (React, Angular, Vue.js, jQuery)
+
+    // Server-Side JavaScript (Node.js): Server-side JavaScript, often powered by Node.js, is used for building server applications, APIs, and backend services. (Express.js, Nest.js)
+
+    // Mobile JavaScript:  Mobile JavaScript frameworks like React Native and NativeScript allow developers to build cross-platform mobile applications using JavaScript and related technologies. (React Native, NativeScript)
+    // .
+    // .
+    // .
+    // etc.
+
+    // --------------------------------------------------
+
+    // Primitive Data Types: immutable and represent single values. They are stored directly in memory and have a fixed size.
+
+    // Number: Represents both integer and floating-point numbers. Example: let age = 30;
+    // String: Represents a sequence of characters, enclosed in single (' ') or double (" ") quotes. Example: let name = 'John';
+    // Boolean: Represents a binary value of true or false. Example: let isStudent = true;
+    // Undefined: Represents a variable that has been declared but hasn't been assigned a value. Example: let score;
+    // Null: Represents the intentional absence of any object value. Example: let data = null;
+    // Symbol (ES6): Represents a unique and immutable value, often used as object property keys. Example: const uniqueKey = Symbol('description');
+    // BigInt (ES11): Represents large integers beyond the Number type's safe range. Example: const bigIntValue = 1234567890123456789012345678901234567890n;
+
+    // --------------------------------------------------
+
+    // Non-Primitive Data Types (Reference Data Types): mutable and represent collections of values or objects. They are stored as references in memory and can have varying sizes. Common non-primitive data types include:
+
+    // Object: Represents a collection of key-value pairs, where keys are strings (or Symbols) and values can be of any data type, including other objects. Objects can be customized and extended with properties and methods.
+    // Array: A specialized type of object that stores a list of values, indexed by integers (0-based). Arrays have built-in methods for manipulating and iterating over their elements.
+    // Function: Functions are objects in JavaScript and can be assigned to variables, passed as arguments, and returned from other functions. They are used for defining reusable blocks of code.
+    // Date: Represents dates and times and provides various methods for working with dates.
+    // RegExp: Represents regular expressions for pattern matching within strings.
+    // Custom Objects: Developers can create custom non-primitive data types by defining their own object types, classes, or prototypes.
+
+    // const employeeData = [
+    //     {
+    //         imgURL: "ename",
+    //         title: "gghyugdbg452435",
+    //         description: "description",
+    //         tags: ["product innovations", "product innovations",],
+    //         URL: "gsrgsg"
+    //     },
+    //     {
+    //         imgURL: "ename",
+    //         title: "gghyugdbg452435",
+    //         description: "description",
+    //         tags: ["product innovations", "product innovations",],
+    //         URL: "gsrgsg"
+    //     },
+    //     {
+    //         imgURL: "ename",
+    //         title: "gghyugdbg452435",
+    //         description: "description",
+    //         tags: ["product innovations", "product innovations",],
+    //         URL: "gsrgsg"
+    //     },
+    // ]
+
+    // --------------------------------------------------
+
+    // Using document.write() to add content to the page
+    // document.write("<h1>Hello, world!</h1>");
+
+    // --------------------------------------------------
+
+    // alert("hey")
+
+    // --------------------------------------------------
+
+    // Declaring Variables:
+    // var greeting = "Hello, world!";
+    // console.log(greeting); // Outputs: Hello, world!
+
+    // var age = 25;
+    // console.log(age); // Outputs: 25
+
+    // var isStudent = true;
+    // console.log(isStudent); // Outputs: true
+
+    // var bigNumber = BigInt("1234567890123456789012345678901234567890");
+    // console.log(bigNumber); // Outputs: 1234567890123456789012345678901234567890n
+
+
+    // MATHEMATICAL STRINGS
+
+    // Addition (+): Used for adding two numbers or concatenating strings.
+    // var sum = 5 + 3; // 8
+    // var fullName = "John" + " " + "Doe"; // "John Doe"
+
+    // var firstName = "siddhesh";
+    // var lastname = "chavan";
+    // console.log(`My name is ${firstName} and last name is ${lastname}`);
+    // CONCAT AS FOLLOWING: "My first name is _____ and last name is ______".
+
+    // Subtraction (-): Used for subtracting one number from another.
+    // var difference = 10 - 4; // 6
+
+    // Multiplication (*): Used for multiplying two numbers.
+    // var product = 6 * 7; // 42
+
+    // Division (/): Used for dividing one number by another
+    // var quotient = 20 / 5; // 4
+
+    // Exponential ():** Used for raising a number to a power
+    // var result = 2 ** 3; // 8 (2 raised to the power of 3)
+
+    // Modulus Remainder (%): Used for finding the remainder after division.
+    // var remainder = 10 % 2; // 1 (10 divided by 3 leaves a remainder of 1)
+    // console.log(remainder);
+
+    // Increment (++) and Decrement (--): Used for increasing or decreasing the value of a variable by 1, respectively. These can be used both in postfix and prefix form.
+    // var x = 5;
+    // console.log(x);
+    // x++; // Postfix increment (x is now 6)
+    // console.log(x);
+    // x--; // Postfix decrement (x is now 5)
+    // console.log(x);
+
+    // var y = 10;
+    // ++y; // Prefix increment (y is now 11)
+    // console.log(y);
+    // --y; // Prefix decrement (y is now 10)
+
+
+    // ASSIGNMENT OPERATORS
+    // += (Add and Assign):
+    // let num = 5;
+    // num += 3;  // Equivalent to num = num + 3;
+    // console.log(num);  // Output: 8
+
+    // -= (Subtract and Assign):
+    // let num = 10;
+    // num -= 4;  // Equivalent to num = num - 4;
+    // console.log(num);  // Output: 6
+
+    // /= (Divide and Assign):
+    // let num = 20;
+    // num /= 5;  // Equivalent to num = num / 5;
+    // console.log(num);  // Output: 4
+
+    //     *= (Multiply and Assign):
+    // let num = 3;
+    // num *= 6;  // Equivalent to num = num * 6;
+    // console.log(num);  // Output: 18
+
+    // **= (Exponentiate and Assign):
+    // let num = 2;
+    // num **= 3;  // Equivalent to num = num ** 3;
+    // console.log(num);  // Output: 8 (2 raised to the power of 3)
+
+    // COMPARISON OPERATORS:
+    // == (Equal to): Checks if two values are equal, but it doesn't consider data type.
+    // console.log(5 == '5');  // true, because the values are equal
+
+    // === (Equal to and compare the type): Checks if two values are equal and have the same data type.
+    // console.log(5 === '5');  // false, because the data types are different
+
+    // != (Not equal to): Checks if two values are not equal, regardless of data type.
+    // console.log(5 != '5');  // false, because the values are equal
+
+    // !== (Type and value not equal to): Checks if two values are not equal or have different data types.
+    // console.log(5 != '5');  // false, because the values are equal
+
+    // > (Greater than): Checks if one value is greater than another.
+    // console.log(10 > 5);  // true, because 10 is greater than 5
+
+    // < (Less than): Checks if one value is less than another.
+    // console.log(5 < 10);  // true, because 5 is less than 10
+
+    // >= (Greater than or equal to): Checks if one value is greater than or equal to another.
+    // console.log(10 >= 10);  // true, because 10 is equal to 10
+
+    // <= (Less than or equal to): Checks if one value is less than or equal to another.
+    // console.log(5 <= 10);  // true, because 5 is less than 10
+
+    // ? (Ternary Operator): It's not exactly a comparison operator but a conditional operator. It's used for conditional expressions.
+    // let age = 15;
+    // let status = age >= 18 ? 'Adult' : 'Minor';
+    //                            OR else
+    // let newStat = age >= 18 && age <= 50 ? "adult" : age > 50 ? "elder" : "Minor";
+    // console.log(status);  // 'Adult'
+
+
+    // LOGICAL OPERATORS
+    // && (Logical AND): Returns true if both operands are true.
+    // console.log(true && true);    // true
+    // console.log(true && false);   // false
+
+    // || (Logical OR): Returns true if at least one of the operands is true.
+    // console.log(true || false);   // true
+    // console.log(false || false);  // false
+
+    // !(Logical NOT): Inverts the value of the operand.
+    // console.log(!true);   // false
+    // console.log(!false);  // true
+
+    // Math.random(): Generates a random floating - point number between 0(inclusive) and 1(exclusive).
+    // let randomNum = Math.random();
+    // console.log(randomNum);
+
+    // Math.floor(): Rounds a number down to the nearest integer.
+    // let roundedDown = Math.floor(4.9);
+    // console.log(roundedDown);  // 4
+
+    // Math.sqrt(): Calculates the square root of a number.
+    // let squareRoot = Math.sqrt(16);
+    // console.log(squareRoot);  // 4
+
+    // Math.min(): Returns the smallest of zero or more numbers.
+    // let minNum = Math.min(23, 88, 1);
+    // console.log(minNum);  // 1
+
+    // Math.max(): Returns the largest of zero or more numbers.
+    // let maxNum = Math.max(839, 347, 99, 2);
+    // console.log(maxNum);  // 839
+
+    // Math.pow(x, y): Calculates x raised to the power of y.
+    // let result = Math.pow(2, 3);
+    // console.log(result);  // 8 (2^3)
+
+    // let numbers = [23, 88, 1, 42, 99, 7];
+    // let largest = Math.max.apply(null, numbers);
+    // console.log("The largest number is:", largest);  // Output: The largest number is: 99
+
+    //--------------------------------------------------------------------------------
+
+    // EXERCISE: Check if the value entered through prompt is even number or not
+
+    //--------------------------------------------------------------------------------
+
+    // EXERCISE: Write a JavaScript function called "convertFeetToInches" that
+    // takes a number of feet as a parameter and converts it to inches.Use the
+    // multiplication operator(*) to perform the conversion.The function should
+    // return the converted value in inches.
+
+    // function convertFeetToInches(feet) {
+    // 1 foot is equivalent to 12 inches, so we multiply feet by 12 to convert.
+    // return feet * 12;
+    // }
+
+    // // Example usage:
+    // let feetValue = 5; // Replace with the number of feet you want to convert
+    // let inchesValue = convertFeetToInches(feetValue);
+    // console.log(feetValue + " feet is equal to " + inchesValue + " inches.");
+
+    // ----------------------------------------------------------------------------------------
+
+    // EXERCISE: Write a JavaScript expression to calculate the average of
+    // three numbers, a, b, and c.
+
+    // const a = 10;  // Replace with your first number
+    // const b = 20;  // Replace with your second number
+    // const c = 30;  // Replace with your third number
+
+    // const average = (a + b + c) / 3;
+
+    // console.log("The average is:", average);
+
+    // ----------------------------------------------------------------------------------------
+
+    // EXERCISE: Create a JavaScript function that takes two parameters, num1
+    // and num2, and returns the larger of the two numbers.
+
+    // function findLargerNumber(num1, num2) {
+    //     if (num1 > num2) {
+    //         return num1;
+    //     } else {
+    //         return num2;
+    //     }
+    // }
+
+    // // Example usage:
+    // let number1 = 25; // Replace with your first number
+    // let number2 = 18; // Replace with your second number
+
+    // let largerNumber = findLargerNumber(number1, number2);
+    // console.log("The larger number is:", largerNumber);
+
+    // ----------------------------------------------------------------------------------------
+
+    // The use of RETURN keyword:
+    //  the return keyword is used within functions to specify the value that the function will produce or "return" when it is called.
+    // The return statement is also used to terminate the execution of a function.
+
+    // function add(a, b) {
+    //     let sum = a + b;
+    // }
+    // let result = add(5, 3);
+    // console.log(result); // Output: undefined
+
+    // function add(a, b) {
+    //     let sum = a + b;
+    //     return sum;
+    // }
+    // let result = add(5, 3);
+    // console.log(result); // Output: 8
+
+    // Using return to exit a function early
+    // function isPositive(number) {
+    //     if (number > 0) {
+    //         return true; // Exit the function and return true if number is positive
+    //     }
+    //     return false; // This line is only reached if number is not positive
+    // }
+    // console.log(isPositive(5));  // Output: true
+    // console.log(isPositive(-3)); // Output: false
+
+
+
+    // function determineGrade(score) {
+    //     if (score >= 90) {
+    //         return "A";
+    //     } else if (score >= 80) {
+    //         return "B";
+    //     } else if (score >= 70) {
+    //         return "C";
+    //     } else if (score >= 60) {
+    //         return "D";
+    //     } else {
+    //         return "F";
+    //     }
+    //     // The code here will never be reached because a return statement was used above.
+    // }
+
+    // let student1 = determineGrade(85);
+    // console.log("Student 1: " + student1); // Output: "Student 1: B"
+
+    // let student2 = determineGrade(45);
+    // console.log("Student 2: " + student2); // Output: "Student 2: F"
+
+    // ----------------------------------------------------------------------------------------
+
+    // String Methods
+    // text.length: Returns the length(number of characters) of a string.
+    // let text = "Hello, world!";
+    // let length = text.length;
+    // console.log(length); // Output: 13
+
+
+    // text.replace("to be replaced", "replaced with"): Replaces the specified substring with another substring in a string.
+    // let text = "I want to be replaced.";
+    // let newText = text.replace("replaced", "changed");
+    // console.log(text);
+    // console.log(newText); // Output: "I want to be changed."
+
+
+    // text.toUpperCase(): Converts all characters in a string to uppercase.
+    // let text = "Hello, world!";
+    // let uppercaseText = text.toUpperCase();
+    // console.log(uppercaseText); // Output: "HELLO, WORLD!"
+
+    // text.toLowerCase(): Converts all characters in a string to lowercase.
+    // let text = "Hello, WORLD!";
+    // let lowercaseText = text.toLowerCase();
+    // console.log(lowercaseText); // Output: "hello, world!"
+
+    // text.concat("Add this"): Concatenates(joins) two or more strings together.
+    // let text1 = "Hello, ";
+    // let text2 = "world!";
+    // let combinedText = text1.concat(text2);
+    // console.log(combinedText); // Output: "Hello, world!"
+
+    // text.trim(): Removes whitespace(spaces, tabs, etc.) from the beginning and end of a string.
+    // let text = "   Some text with spaces    ";
+    // let trimmedText = text.trim();
+    // console.log(trimmedText); // Output: "Some text with spaces"
+
+    // text.slice(2, 5): Extracts a portion of a string starting from index 2 up to, but not including, index 5.
+    // let text = "Hello, world!";
+    // let slicedText = text.slice(2, 5); // "llo"
+
+
+    // function stringContains(substring, inputString) {
+    //     // Use the String includes() method to check for substring existence
+    //     return inputString.includes(substring);
+    // }
+    // // Example usage:
+    // let text = "The quick brown fox jumps over the lazy dog.";
+    // let searchString = "fox";
+    // let result = stringContains(searchString, text);
+    // console.log(result); // Output: true
+
+
+
+    // Number() Function:
+    // The Number() function is used to convert a value to a number data type.It can be used to convert strings, booleans, and other data types to numbers.If the conversion is not possible, it returns NaN(Not - a - Number).
+
+    // var num = Number(prompt("enter Number"));
+
+    // console.log(num);
+
+    // parseInt() Function:
+    // The parseInt() function parses a string and returns an integer.It takes an optional second argument, called the radix, which specifies the base of the numeral system(e.g., base 10 for decimal numbers).
+
+
+    // isNaN() Function:
+    // The isNaN() function is used to check if a value is NaN(Not - a - Number).It returns true if the value is NaN, and false if it's a valid number.
+
+    // toString() Method:
+    // The toString() method is used to convert a number to its string representation. You can also specify the base for numerical systems other than base 10.
+
+    //     Accessing Elements
+    // document.getElementById();
+    // document.getElementsByClassName();
+    // document.getElementsByTagName();
+
+
+    // Modifying and accessing content
+    // .innerHTML:
+    // <div id="myDiv">This is some text.</div>
+
+    // // Get the HTML content of the element
+    // let content = document.getElementById("myDiv").innerHTML;
+    // console.log(content); // Output: "This is some text."
+
+    // // Set new HTML content for the element
+    // document.getElementById("myDiv").innerHTML = "<p>New content</p>";
+
+    // // .value
+    // <input type="text" id="textInput" value="Default Value" />
+    // // Get the value of the input field
+    // let inputValue = document.getElementById("textInput").value;
+    // console.log(inputValue); // Output: "Default Value"
+
+    // // Set a new value for the input field
+    // document.getElementById("textInput").value = "New Value";
+
+    // // Modifying attribute
+    // // .style Property:
+    // <div id="myDiv" style="color: blue;">This is a colored div.</div>
+    // Change the text color to red
+    // document.getElementById("myDiv").style.color = "red";
+
+    // // .src Property:
+    // <img id="myImage" src="image.jpg" alt="An image" />
+    // // Change the image source
+    // document.getElementById("myImage").src = "newImage.jpg";
+
+    // // .setAttribute("attributeName", "attributeValue") Method:
+    // <a id="myLink" href="https://www.example.com">Visit Example</a>
+    // // Change the href attribute of the link
+    // document.getElementById("myLink").setAttribute("href", "https://www.newexample.com");
+
+    // // .getAttribute("attributeName") Method:
+    // <a id="myLink" href="https://www.example.com">Visit Example</a>
+    // // Get the value of the href attribute of the link
+    // let linkHref = document.getElementById("myLink").getAttribute("href");
+    // console.log(linkHref); // Output: "https://www.example.com"
+
+    // Task 1: Change the background color of a <div> element with the ID "myDiv" to yellow.
+    // {
+    //     document.getElementById("myDiv").style.backgroundColor = "yellow";
+    // }
+    // // Task 2: Set the alt attribute of an image with the ID "myImage" to "A beautiful sunset."
+    // {
+    //     document.getElementById("myImage").setAttribute("alt", "A beautiful sunset");
+
+    // }
+    // // Task 3: Get the src attribute value of an image with the ID "myImage" and log it to the console.
+    // {
+    //     let imageSrc = document.getElementById("myImage").getAttribute("src");
+    //     console.log(imageSrc);
+    // }
+
+
+    // // Declaring a Function:
+    // function greet() {
+    //     console.log("Hello, world!");
+    // }
+
+    // const greet = function sayHello() {
+    //     console.log("Hello!");
+    // };
+
+    // const greet = function () {
+    //     console.log("Hello!");
+    // };
+
+    // // Arrow Function:
+    // const add = (a, b) => a + b;
+
+
+    // Using the onclick Event:
+    // <button id="myButton">Click me</button>
+
+    // function showMessage() {
+    //     alert("Button clicked!");
+    // }
+
+    // document.getElementById("myButton").onclick = showMessage;
+
+
+    // Calling events:
+    // Inline HTML Attribute:
+    // <button onclick="myFunction()">Click me</button>
+
+    // Using DOM Event Handlers:
+    // <button id="myButton">Click me</button>
+    // document.getElementById("myButton").onclick = function () {
+    //     alert("Button clicked!");
+    // };
+
+    // addEventListener Method:
+    <button id="myButton">Click me</button>
+    document.getElementById("myButton").addEventListener("click", function () {
+        alert("Button clicked!");
+    });
+
+    // Using Named Functions:
+    // <button id="myButton">Click me</button>
+    // function handleButtonClick() {
+    //     alert("Button clicked!");
+    // }
+    // document.getElementById("myButton").addEventListener("click", handleButtonClick);
+
+
+    // Event Delegation:
+    // <ul id="myList">
+    //     <li>Item 1</li>
+    //     <li>Item 2</li>
+    //     <li>Item 3</li>
+    // </ul>
+    // document.getElementById("myList").addEventListener("click", function (event) {
+    //     if (event.target.tagName === "LI") {
+    //         alert("List item clicked: " + event.target.textContent);
+    //     }
+    // });
+
+
+
+
+    ---------------------------------------------------------------------------------
+
+

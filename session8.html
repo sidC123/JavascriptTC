@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session7</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        div {
+            margin: 50px;
+        }
+
+        input {
+            display: block;
+        }
+
+        .new_class {
+            margin: 20px;
+            padding: 20px;
+            border: 3px solid black;
+        }
+
+        .style_div {
+            border: 3px solid black;
+            height: 200px;
+            width: 200px;
+            padding: 20px;
+            margin: 20px;
+        }
+
+        .img_div {
+            height: 300px;
+            width: 300px;
+            border: 3px solid black;
+        }
+
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #414141; color: aliceblue;">
+
+
+    <!-- <div class="style_div" ondblclick="funDbClick();" id="demo5">ondblclick</div> -->
+
+    <!-- <input type="text" name="input1" placeholder="Enter Your Name" oninput="onInput();" id="demo6"> -->
+
+    <!-- <input type="text" onfocus="onFocus();" id="demo10"> -->
+
+    <!-- <input onblur="onBlur();" value="On blur input" id="demo7"> -->
+
+    <!-- <textarea onselect="onSelect();" style="height: 300px;width: 400px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </textarea>
+    <button id="demo9" style="display: none;">copy</button> -->
+
+    <!-- <div class="style_div" id="demo11" oncopy="onCopy();">Lorem Ipsum is simply dummy text of the printing and
+        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+        unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+    </div> -->
+
+
+    <!-- <input type="text" name="" oncut="fun11();">
+    <input type="text" name="" onpaste="fun12();"> -->
+
+    <!-- <select onchange="onChange(this);">
+        <option>Mumbai</option>
+        <option>Pune</option>
+        <option>Nasik</option>
+    </select> -->
+
+    <!-- <input type="text" name="" onchange="onChangeInput(this)"> -->
+
+    <!-- <div id="nav">
+        <button href="#tab1">Tab 1</button>
+        <button href="#tab2">Tab 2</button>
+        <button href="#tab3">Tab 3</button>
+    </div>
+    <div id="tabs">
+        <div id="tab1" class="tab-content active">Content for Tab 1</div>
+        <div id="tab2" class="tab-content">Content for Tab 2</div>
+        <div id="tab3" class="tab-content">Content for Tab 3</div>
+    </div> -->
+
+
+    <!-- STAR PATTERNS USING NESTED FOR LOOPS -->
+    <!-- <div id="pyramid-container"></div>
+    <div id="inverted-pyramid-container"></div>
+    <div id="square-container"></div> -->
+
+
+    <!-- <div class="div1">box 1</div>
+    <div class="div1">box 2</div>
+    <div class="div1">box 3</div>
+    <button onclick="fun1();">ADD_COLOR</button> -->
+
+
+    <script>
+
+        // More Events
+        // 1.Double click event
+        function funDbClick() {
+            document.getElementById('demo5').style.backgroundColor = "blue";
+        }
+
+        // 2.On input event
+        function onInput() {
+            let input = document.getElementById('demo6');
+            console.log(input.value);
+        }
+
+        // 3.On Focus event
+        function onFocus() {
+            let input = document.getElementById('demo7');
+            console.log("input under focus");
+        }
+
+        // 4.On blur event
+        function onBlur() {
+            alert("onblur input event");
+            document.getElementById('demo7').style.backgroundColor = "red";
+        }
+
+        // 5.On select event
+        function onSelect() {
+            document.getElementById('demo9').style.display = "block";
+        }
+
+        // 6.On copy event
+        function onCopy() {
+            document.getElementById('demo11').style.color = "red";
+        }
+
+        // 7.On cut event
+        function fun11() {
+            alert("on cut event triggered");
+        }
+
+        // 8.On paste event
+        function fun12() {
+            alert("on paste event triggered");
+        }
+
+        // 9.On change event
+        function onChange(ele) {
+            alert("Selected value: " + ele.value);
+        }
+
+        function onChangeInput(ele) {
+            alert("Input value: " + ele.value);
+        }
+
+
+
+        // Task: Creating multiplication table
+        // for (let i = 1; i <= 10; i++) {
+        //     for (let j = 1; j <= 10; j++) {
+        //         let product = i * j;
+        //         console.log(`${i} x ${j} = ${product}`);
+        //     }
+        // }
+
+
+        // Two-Dimensional Array
+        // const matrix = [
+        //     [1, 2, 3],
+        //     [4, 5, 6],
+        //     [7, 8, 9]
+        // ];
+
+        // for (let i = 0; i < matrix.length; i++) {
+        //     for (let j = 0; j < matrix[i].length; j++) {
+        //         console.log(matrix[i][j]);
+        //     }
+        // }
+
+
+        // right angle triangle pattern
+        // const height = 5;
+        // let patternHTML = '';
+
+        // for (let i = 1; i <= height; i++) {
+        //     let pattern = '';
+        //     for (let j = 1; j <= i; j++) {
+        //         pattern += '⭕';
+        //     }
+        //     console.log(pattern);
+        //     patternHTML += `<p>${pattern}</p>`;
+        // }
+        // // Display the pattern in the "pyramid-container" div
+        // const pyramidContainer = document.getElementById("pyramid-container");
+        // pyramidContainer.innerHTML = patternHTML;
+
+
+        // inverted right angle triangle pattern
+        // const invertedHeight = 5;
+        // let invertedPatternHTML = '';
+
+        // for (let i = invertedHeight; i >= 1; i--) {
+        //     let pattern = '';
+        //     for (let j = 1; j <= i; j++) {
+        //         pattern += '⭕';
+        //     }
+        //     console.log(pattern);
+        //     invertedPatternHTML += `<p>${pattern}</p>`;
+        // }
+        // // Display the pattern in the "inerted-pyramid-container" div
+        // const invertedPyramidContainer = document.getElementById("inverted-pyramid-container");
+        // invertedPyramidContainer.innerHTML = invertedPatternHTML;
+
+
+        // square pattern
+        // const size = 5;
+        // let squarePatternHTML = '';
+        // for (let i = 1; i <= size; i++) {
+        //     let pattern = '';
+        //     for (let j = 1; j <= size; j++) {
+        //         if (i === 1 || i === size || j === 1 || j === size) {
+        //             pattern += '⭕ ';
+        //         } else {
+        //             pattern += '   ';
+        //         }
+        //     }
+        //     squarePatternHTML += `<p>${pattern}</p>`;
+        //     console.log(pattern);
+        // }
+        // // Display the pattern in the "square-container" div
+        // const squareContainer = document.getElementById("square-container");
+        // squareContainer.innerHTML = squarePatternHTML;
+
+
+        // PRINTING CHESS BOARD USING NESTED FOR LOOP
+        // const size = 8;
+        // for (let i = 1; i <= size; i++) {
+        //     let row = '';
+        //     for (let j = 1; j <= size; j++) {
+        //         if ((i + j) % 2 === 0) {
+        //             row += '■ '; // Black square
+        //         } else {
+        //             row += '□ '; // White square
+        //         }
+        //     }
+        //     console.log(row);
+        // }
+
+        // word count and character count
+        // var mystr = "Hello world";
+        // var word = 1;
+        // var char = 0;
+        // for (var i = 0; i < mystr.length; i++) {
+        //     // document.write(mystr[i]);
+        //     if (mystr[i] == " ") {
+        //         word = word + 1
+        //     }
+        //     else {
+        //         char = char + 1
+        //     }
+
+        // }
+        // document.write("the num of word " + word + "<br>")
+        // document.write("the num of char " + char + "<br>")
+
+
+        // Adding css over array if elements
+        // var a = document.getElementsByClassName('div1');
+        // console.log(a)
+        // function fun1() {
+        //     for (var i = 0; i < a.length; i++) {
+        //         console.log(a[i]);
+        //         a[i].style.backgroundColor = "red";
+        //         a[i].className += " new_class"
+        //     }
+        // }
+
+
+
+        // The forEach method is a higher-order function in JavaScript that is used to iterate over elements in an array and execute a provided callback function for each element in the array. It simplifies the process of iterating over an array, making the code cleaner and more concise.
+
+        // Key points to remember about forEach:
+        // It does not create a new array; it is used for iteration and side effects.
+        // It is an alternative to using a for loop when you need to iterate over array elements.
+        // It is easy to read and makes the code more expressive.
+
+        // NAV AND TABS
+        // document.getElementById("nav").addEventListener("click", function (event) {
+        //     const index = Array.from(this.children).indexOf(event.target);
+        //     if (index >= 0) {
+        //         showTab(index);
+        //     }
+        // });
+        // function showTab(index) {
+        //     const tabContents = document.querySelectorAll(".tab-content");
+        //     tabContents.forEach((tabContent, i) => {
+        //         if (i === index) {
+        //             tabContent.classList.add("active");
+        //         } else {
+        //             tabContent.classList.remove("active");
+        //         }
+        //     });
+        // }
+
+    </script>
+
+</body>
+
+</html>

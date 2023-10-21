@@ -47,6 +47,13 @@
         .tab-content.active {
             display: block;
         }
+
+        #progress-bar {
+            width: 0;
+            display: block;
+            height: 30px;
+            background-color: #4CAF50;
+        }
     </style>
 
 </head>
@@ -105,6 +112,10 @@
     <div class="div1">box 2</div>
     <div class="div1">box 3</div>
     <button onclick="fun1();">ADD_COLOR</button> -->
+
+    <span id="progress-bar"></span>
+    <button onclick="startProgressBar()">Start Progress</button>
+    <button onclick="stopProgressBar()">Stop Progress</button>
 
 
     <script>
@@ -290,6 +301,7 @@
         // It is an alternative to using a for loop when you need to iterate over array elements.
         // It is easy to read and makes the code more expressive.
 
+
         // NAV AND TABS
         document.getElementById("nav").addEventListener("click", function (event) {
             const index = Array.from(this.children).indexOf(event.target);
@@ -307,6 +319,209 @@
                 }
             });
         }
+
+
+        //SESSION 9 ---------------------------------
+
+        //break:
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) {
+                break; // This will exit the loop when i is 3
+            }
+            console.log(i, "This will exit the loop when i is 3");
+        }
+
+        //continue:
+        for (let i = 1; i <= 5; i++) {
+            if (i === 3) {
+                continue; // This will skip the current iteration when i is 3
+            }
+            console.log(i, "This will skip the current iteration when i is 3");
+        }
+
+        //return:
+        function add(a, b) {
+            return a + b; // Returns the sum of a and b
+        }
+        let result = add(5, 3);
+        console.log(result, "🤔🤔🤔🤔🤔"); // Prints 8
+
+        //eval()(use with caution):
+        let x = 10;
+        let y = 20;
+        let code = "x + y";
+        let eresult = eval(code); // Evaluates the code and returns the result
+        console.log(eresult); // Prints 30
+
+
+        // SWITCHCASEexample:
+        var day = 3;
+        var dayName;
+
+        //switch (valueToCompare) {
+        //    case coditio1:
+        //        result1;
+        //        break;
+        //    case coditio2:
+        //        result1;
+        //        break;
+        //    default:
+        //        defaultresult;
+        //}
+
+        switch (day) {
+            case 1:
+                dayName = "Monday";
+                break;
+            case 2:
+                dayName = "Tuesday";
+                break;
+            case 3:
+                dayName = "Wednesday";
+                break;
+            case 4:
+                dayName = "Thursday";
+                break;
+            case 5:
+                dayName = "Friday";
+                break;
+            case 6:
+                dayName = "Saturday";
+                break;
+            case 7:
+                dayName = "Sunday";
+                break;
+            default:
+                dayName = "Invalid day";
+        }
+        console.log("Today is " + dayName);
+
+
+
+
+        //setTimeout():
+        //setTimeout() is a function that allows you to execute a function or code snippet after a specified delay(in milliseconds).
+        //It takes two parameters: a function to execute and the delay before execution.
+        setTimeout(function () {
+            console.log("This message will appear after 2000 milliseconds (2 seconds).");
+        }, 2000);
+
+        //clearTimeout():
+        //clearTimeout() is used to cancel a timeout previously set with setTimeout().You provide the timeout ID returned by setTimeout() to clear it.
+        let timeoutId = setTimeout(function () {
+            console.log("This won't appear.");
+        }, 2000);
+        clearTimeout(timeoutId);
+
+        //setInterval():
+        //setInterval() is used to repeatedly execute a function or code snippet at a specified interval(in milliseconds).
+        //It also takes two parameters: a function to execute and the interval between executions.
+
+        setInterval(function () {
+            console.log("This message will appear every 1000 milliseconds (1 second).");
+        }, 1000);
+
+        //clearInterval():
+        //clearInterval() is used to stop the execution of a function or code snippet that was set to run at specified intervals using setInterval().
+        //You provide the interval ID returned by setInterval() to clear it.
+        let intervalId = setInterval(function () {
+            console.log("This message will appear repeatedly.");
+        }, 1000);
+        clearInterval(intervalId);
+
+
+
+        //targettig elemet
+        let progressBar = document.getElementById("progress-bar");
+        //creatig width variable
+        //let width = 0;
+        let intervalId2;
+
+        function startProgressBar() {
+            intervalId2 = setInterval(increaseProgressBar, 50);
+        }
+
+        function stopProgressBar() {
+            clearInterval(intervalId2);
+        }
+
+        function increaseProgressBar() {
+            if (width >= 100) {
+                clearInterval(intervalId2);
+            } else {
+                width++;
+                progressBar.style.width = width + "%";
+            }
+        }
+
+
+
+        //EXERCISE: Write a code that shows still running until the random number generated is 3 and when random number is 3 it shows interval cleared
+
+
+        //EXERCISE: https://www.youtube.com/watch?v=LMvtbf8dxCo
+
+
+
+
+
+        // SWITCHCASEexample:
+        // Function to calculate the area of a circle
+        function calculateCircleArea(radius) {
+            return Math.PI * Math.pow(radius, 2);
+        }
+
+        // Function to calculate the area of a rectangle
+        function calculateRectangleArea(length, width) {
+            return length * width;
+        }
+
+        // Function to calculate the area of a triangle
+        function calculateTriangleArea(base, height) {
+            return 0.5 * base * height;
+        }
+
+        // Get the user's choice of shape
+        var shape = prompt("Enter the shape (circle, rectangle, triangle):");
+
+        switch (shape) {
+            case "circle":
+                var radius = parseFloat(prompt("Enter the radius:"));
+                if (!isNaN(radius)) {
+                    var area = calculateCircleArea(radius);
+                    console.log("The area of the circle is " + area.toFixed(2) + " square units.");
+                } else {
+                    console.log("Invalid input for radius.");
+                }
+                break;
+            case "rectangle":
+                var length = parseFloat(prompt("Enter the length:"));
+                var width = parseFloat(prompt("Enter the width:"));
+                if (!isNaN(length) && !isNaN(width)) {
+                    var area = calculateRectangleArea(length, width);
+                    console.log("The area of the rectangle is " + area + " square units.");
+                } else {
+                    console.log("Invalid input for length or width.");
+                }
+                break;
+            case "triangle":
+                var base = parseFloat(prompt("Enter the base:"));
+                var height = parseFloat(prompt("Enter the height:"));
+                if (!isNaN(base) && !isNaN(height)) {
+                    var area = calculateTriangleArea(base, height);
+                    console.log("The area of the triangle is " + area + " square units.");
+                } else {
+                    console.log("Invalid input for base or height.");
+                }
+                break;
+            default:
+                console.log("Invalid shape choice.");
+        }
+
+
+
+
+
 
     </script>
 

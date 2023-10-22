@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 10</title>
+
+    <style>
+        * {
+            margin: 0;
+            /* padding: 0; */
+        }
+
+        .example-div1 {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            border: 1px solid black;
+        }
+
+        /* To-do */
+        .todo {
+            width: 50%;
+            margin: 200px auto;
+            padding: 50px;
+            background-color: pink;
+        }
+
+        .task-container {
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        li {
+            margin: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px;
+            border: 1px solid #ccc;
+        }
+
+        button.delete-button {
+            background-color: #f44336;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
+
+</head>
+
+<body style="background-color: #d7d7d7;">
+    <div class="example-div1"></div>
+    <div class="example-div1"></div>
+    <div class="example-div1"></div>
+    <div class="example-div1"></div>
+    <div class="example-div1"></div>
+
+    <div id="container"></div>
+
+    <div class="parent"></div>
+
+    <ul class="list">
+        <li>JS</li>
+        <li>CSS</li>
+        <li>HTML</li>
+    </ul>
+
+    <div class="element-to-remove">.element-to-remove</div>
+
+
+    <div class="todo">
+        <h1>To-Do List</h1>
+        <div class="task-container">
+            <input type="text" id="taskInput" placeholder="Add a new task">
+            <button id="addTaskBtn">Add</button>
+        </div>
+        <ul id="taskList">
+            <!-- Tasks will be added here -->
+        </ul>
+    </div>
+
+
+
+    <script>
+        // ● Accessing elements
+        //      ○ document.querySelector()
+        // document.querySelector(): This method allows you to select the first element that matches a given CSS selector.
+        //      ○ document.querySelectorAll()
+        // document.querySelectorAll(): This method selects all elements that match a given CSS selector and returns a NodeList, which is similar to an array.
+
+        // ● Adding & removing elements
+        //      ○ .createElement():  This method creates a new HTML element.
+        //      ○ .appendChild():  This method is used to add a child element to a parent element.
+        //      ○ .createTextNode():  This method creates a text node that can be added to an element.
+        //      ○ .remove()  
+        //      ○ .childNodes:  This property returns a NodeList of all child nodes (including elements, text nodes, etc.) of an element.
+        //      ○ .children:  This property returns an HTMLCollection of child elements of an element.
+        //      ○ .parentNode
+        // Accessing Elements:
+
+
+        let selectedDiv = document.querySelector(".example-div1");
+        selectedDiv.style.backgroundColor = "red";
+
+
+
+        // Append single element in one call
+        const container = document.querySelector('#container');
+        container.style.backgroundColor = "wheat";
+        const newDiv = document.createElement('div');
+        newDiv.textContent = 'Newly created div';
+        container.appendChild(newDiv);
+
+        // Append multiple elements in one call
+        const parentElement = document.querySelector('.parent');
+        parentElement.append('Text node', document.createElement('div'), 'More text');
+
+
+
+        const list = document.querySelector('.list');
+        let textNode = document.createTextNode("list item text value");
+        let listItem = document.createElement('li');
+        listItem.appendChild(textNode);
+        list.append(listItem);
+
+
+        const elementToRemove = document.querySelector('.element-to-remove');
+        elementToRemove.remove();
+
+        const childNodes = list.childNodes;
+        console.log(childNodes);
+
+        const children = list.children;
+        console.log(children);
+
+
+        let selectedDivParent = selectedDiv.parentElement;
+        console.log(selectedDivParent);
+
+
+
+        // To-do
+        const taskInput = document.getElementById('taskInput');
+        const addTaskBtn = document.getElementById('addTaskBtn');
+        const taskList = document.getElementById('taskList');
+
+        // Function to create a new task item
+        function createTaskElement(taskText) {
+            const li = document.createElement('li');
+            const taskTextNode = document.createTextNode(taskText);
+            li.appendChild(taskTextNode);
+
+            const deleteButton = document.createElement('button');
+            deleteButton.classList.add('delete-button');
+            deleteButton.innerHTML = 'Delete';
+            li.appendChild(deleteButton);
+
+            // Add event listener to delete task when the button is clicked
+            deleteButton.addEventListener('click', function () {
+                li.remove();
+            });
+
+            return li;
+        }
+
+        // Function to add a new task to the list
+        function addTask() {
+            const taskText = taskInput.value.trim();
+
+            if (taskText === '') {
+                alert('Please enter a task.');
+                return;
+            }
+
+            const taskElement = createTaskElement(taskText);
+            taskList.appendChild(taskElement);
+            taskInput.value = ''; // Clear the input field
+        }
+
+        addTaskBtn.addEventListener('click', addTask);
+
+        // Allow adding a task when the Enter key is pressed
+        taskInput.addEventListener('keydown', function (event) {
+            if (event.key === 'Enter') {
+                addTask();
+            }
+        });
+
+
+
+    </script>
+
+</body>
+
+</html>

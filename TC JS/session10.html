@@ -62,25 +62,28 @@
     <div class="example-div1"></div>
     <div class="example-div1"></div>
 
-    <div id="container"></div>
+    <!-- <div id="container"></div> -->
 
-    <div class="parent"></div>
+    <!-- <div class="parent"></div> -->
 
     <ul class="list">
         <li>JS</li>
         <li>CSS</li>
         <li>HTML</li>
     </ul>
+    <button onclick="addItem()">Add List Item</button>
 
     <div class="element-to-remove">.element-to-remove</div>
 
 
     <div class="todo">
         <h1>To-Do List</h1>
+
         <div class="task-container">
             <input type="text" id="taskInput" placeholder="Add a new task">
             <button id="addTaskBtn">Add</button>
         </div>
+
         <ul id="taskList">
             <!-- Tasks will be added here -->
         </ul>
@@ -107,21 +110,27 @@
 
 
         let selectedDiv = document.querySelector(".example-div1");
-        selectedDiv.style.backgroundColor = "red";
+        // selectedDiv.style.backgroundColor = "red";
 
 
+        // let selectedAllDiv = document.querySelectorAll(".example-div1");
+        // console.log(selectedAllDiv);
+
+        // selectedAllDiv.forEach(function (div) {
+        //     div.style.backgroundColor = "red";
+        // });
 
         // Append single element in one call
-        const container = document.querySelector('#container');
-        container.style.backgroundColor = "wheat";
-        const newDiv = document.createElement('div');
-        newDiv.textContent = 'Newly created div';
-        container.appendChild(newDiv);
+        // const container = document.querySelector('#container');
+        // container.style.backgroundColor = "wheat";
+        // const newDiv = document.createElement('div');
+        // newDiv.textContent = 'Newly created div';
+        // container.appendChild(newDiv);
+
 
         // Append multiple elements in one call
-        const parentElement = document.querySelector('.parent');
-        parentElement.append('Text node', document.createElement('div'), 'More text');
-
+        // const parentElement = document.querySelector('.parent');
+        // parentElement.append('Text node', document.createElement('div'), 'More text');
 
 
         const list = document.querySelector('.list');
@@ -129,7 +138,6 @@
         let listItem = document.createElement('li');
         listItem.appendChild(textNode);
         list.append(listItem);
-
 
         const elementToRemove = document.querySelector('.element-to-remove');
         elementToRemove.remove();
@@ -156,26 +164,37 @@
             const li = document.createElement('li');
             const taskTextNode = document.createTextNode(taskText);
             li.appendChild(taskTextNode);
-
             const deleteButton = document.createElement('button');
             deleteButton.classList.add('delete-button');
             deleteButton.innerHTML = 'Delete';
             li.appendChild(deleteButton);
-
             // Add event listener to delete task when the button is clicked
             deleteButton.addEventListener('click', function () {
                 li.remove();
             });
-
             return li;
         }
 
         // Function to add a new task to the list
         function addTask() {
             const taskText = taskInput.value.trim();
-
             if (taskText === '') {
                 alert('Please enter a task.');
+                return;
+            }
+
+            // if (!/^\d+$/.test(taskText)) {
+            //     alert('Please enter only numbers.');
+            //     return;
+            // }
+
+            // if (!/^\d{1,10}$/.test(taskText)) {
+            //     alert('Please enter a valid mobile number with a maximum of 10 digits.');
+            //     return;
+            // }
+
+            if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(taskText)) {
+                alert('Please enter a valid email address.');
                 return;
             }
 
@@ -183,9 +202,7 @@
             taskList.appendChild(taskElement);
             taskInput.value = ''; // Clear the input field
         }
-
         addTaskBtn.addEventListener('click', addTask);
-
         // Allow adding a task when the Enter key is pressed
         taskInput.addEventListener('keydown', function (event) {
             if (event.key === 'Enter') {

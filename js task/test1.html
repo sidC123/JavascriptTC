@@ -1,0 +1,551 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS TASK</title>
+</head>
+
+<style>
+    *{
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    }
+
+    .div_style {
+    height: 400px;
+    width: 630px;
+    border: 7px double black;
+    border-radius: 5px;
+    margin: 20px 20px 45px 20px;
+    box-shadow: 0 0 10px black;
+    padding-top: 160px;
+    box-sizing: border-box;
+    text-align: center;
+    color: aquamarine;
+    font-size: 50px;
+    font-weight: 800;
+    font-family:cursive;
+}
+    
+    input {
+        width: 180px;
+        height: 25px;
+        font-size: 20px;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.363);
+        border: 1px solid royalblue;
+        border-radius: 5px;
+        display: block;
+    }
+
+    button {
+        width: 100px;
+        height: 30px;
+        font-size: 20px;
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.486);
+    }
+
+    label {
+        font-size: 20px;
+    }
+
+    .style1 {
+            width: 300px;
+            height: 200px;
+            border: 2px solid red;
+            margin: 10px;
+            box-shadow: 0px 5px 5px;
+            font-family: sans-serif;
+            font-weight: 600;
+    }
+
+    .style2 {
+        width: 100%;
+        height: auto;
+        border: 2px solid black;
+        background-color: red;
+        margin: 2px;
+        text-align: center;
+        font-size: 30px;
+    }
+
+    .style3 {
+        width: 100%;
+        height: auto;
+        border: 2px solid black;
+        background-color: skyblue;
+        margin: 2px;
+        text-align: justify;
+        display: none;
+    }
+
+    .titlediv {
+            width: 100%;
+            height: auto;
+            background-color: rgb(43, 198, 226);
+            text-align: center;
+            padding-bottom: 15px;
+        }
+
+        h2 {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            font-size: 30px;
+            line-height: normal;
+            margin-top: 0;
+            padding-top: 5px;
+        }
+
+        .titlediv input {
+            width: 70%;
+            height: 33px;
+            font-size: 20px;
+            line-height: 0;
+            border-radius: 3px;
+            border: 1.5px solid red !important;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.363);
+
+        }
+
+        .titlediv button {
+            width: 50px;
+            height: 35px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.363);
+            border: none;
+            border-radius: 3px;
+        }
+
+        ul {
+            list-style: none !important;
+            padding-left: 0 !important;
+        }
+
+        ul li {
+            box-sizing: border-box;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 45px;
+            /* text-align: center; */
+            padding-left: 0 !important;
+            width: 75%;
+            margin: 0 auto;
+            background: white;
+            font-size: 25px;
+            border: 2px solid black;
+        }
+
+        .remove_btn {
+            height: 43px;
+            background-color: red;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            font-size: 18px;
+            width: 90px;
+        }
+        #btn3 {
+            background-image: url(flip.gif);
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+</style>
+
+<body>
+    <h2>Q1. Find Grade of student</h2>
+    
+    var marks = [80, 77, 88, 95, 68];
+    find the grade of student if the avg is:
+    A= 100-90,
+    B= 90-80,
+    C= 80-70,
+    D= 70-60,
+    F= less than 60
+    <br>
+    <br>
+    <button style="width: auto;" onclick="Grade();">Find Grade</button>
+
+    <!--  Answer 1 ❓❓❓❓❓❓ --> 
+    <script type="text/javascript">
+        function Grade() {
+
+            var marks = [80, 77, 88, 95, 68];
+
+            var addition = 0;
+            for (var i = 0; i < marks.length; i++) {
+                addition += marks[i];
+            }
+
+            var total_num = marks.length;
+            var avg = (addition / total_num);
+
+            if (avg < 100 && avg > 90) {
+                alert("Grade is A");
+            }
+            else if (avg < 90 && avg > 80) {
+                alert("Grade is B");
+            }
+            else if (avg < 80 && avg > 70) {
+                alert("Grade is C");
+            }
+            else if (avg < 70 && avg > 60) {
+                alert("Grade is D");
+            }
+            else if (avg < 60) {
+                alert("Grade is F");
+            }
+        }
+
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q2. Find a leap Year</h2>
+    <div style="margin: auto;">
+        <input type="text" id="year_input" placeholder="Enter year">
+        <button onclick="leapCheck();">Check</button>
+    </div>
+
+    <!--  Answer 2 ❓❓❓❓❓❓-->
+    <script type="text/javascript">
+
+        function leapCheck() {
+            var year = Number(document.getElementById('year_input').value);
+
+            if (year == "") {
+                alert("Kindly enter a valid number");
+            }
+            else if (year % 4 == 0) {
+                alert("This year is a Leap year.")
+            }
+            else if (year % 4 !== 0) {
+                alert("This year is not a Leap year.")
+            }
+        }
+    </script>
+    
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q3. Find the hypotenuse with Pythagorean function</h2>
+    <label for="side A length">side A length:</label>
+    <input type="text" name="side1" id="side1">
+    <label for="side B length">side B length:</label>
+    <input type="text" name="side2" id="side2">
+    <button style="width: auto; background-color: white; border: none; border-radius: 5px;" onclick="pytha();">Calculate
+        length of C</button>
+    <p id="pytha_ans"
+        style="font-size: 20px; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; width: 58.2%; height: 25px; border: 2px solid yellowgreen;">
+    </p>
+
+    <!-- Answer 3 ❓❓❓❓❓❓ --> 
+    <script type="text/javascript">
+        function pytha() {
+            var x = Number(document.getElementById('side1').value);
+            var y = Number(document.getElementById('side2').value);
+
+            var ans = Math.sqrt((x * x) + (y * y));
+
+            document.getElementById("pytha_ans").innerHTML = ans;
+        }
+
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q4. check if given string starts with "Java"</h2>
+    <p>Given string is: Javascript</p>
+    <button onclick="match_string();">Check</button>
+
+    <br>
+    <hr>
+    <br>
+
+    <!--  Answer 4 ❓❓❓❓❓❓ --> 
+    <script type="text/javascript">
+        function match_string() {
+            var given = "Javascript";
+            var res = given.startsWith("Java");
+            alert(res);
+
+            // var given = "Javascript";
+            // var prefix = given.slice(0, 4); // Extract the first 4 characters
+            // var res = prefix === "Java";
+            // alert(res);
+        }
+
+
+
+    </script>
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q5.1. Make new array of unique elements names as "uniq" from other array of strings given below</h2>
+
+    var animals = ["cat", "tiger", "dog", "cat", "elephant", "mouse", "lion", "tiger", "cat", "dog", "donkey", "donkey", "cheetah", "mouse", "tiger"];
+
+
+    <h2>Q5.2. Compare unique array elements with animals array and console count</h2>
+    Output: 
+    cat: 3, dog: 2
+
+    <h2>Q5.3. Compare animals elements with "uniq" object and find each element's occurence. Console the uniq object</h2>
+    Output:  { cat: 3, dog: 2, }
+
+    <script>
+        // Answer 5.1: ❓❓❓❓❓❓
+        // Make new array of unique elements names as "uniq" from other array of strings given below
+        // var animals = ["cat", "tiger", "dog", "cat", "elephant", "mouse", "lion", "tiger", "cat", "dog", "donkey", "donkey", "cheetah", "mouse", "tiger"];
+        
+        // var uniq = [];
+        // for (var i = 0; i < animals.length; i++) {
+        //     if (uniq.indexOf(animals[i]) === -1) {
+        //         uniq.push(animals[i]);
+        //     }
+        // }
+        // // console.log(uniq);
+
+        // // var uniq = [...new Set(animals)];
+        // // console.log(uniq);
+
+
+        // Answer 5.2: Compare unique array elements with animals array and give count ❓❓❓❓❓❓
+
+        // var animals = ["cat", "tiger", "dog", "cat", "elephant", "mouse", "lion", "tiger", "cat", "dog", "donkey", "donkey", "cheetah", "mouse", "tiger"];
+        // uniq = ['cat', 'tiger', 'dog', 'elephant', 'mouse', 'lion', 'donkey', 'cheetah']
+        // var count = 0;
+
+        // for (var i = 0; i < uniq.length; i++) {
+        //     for (var j = 0; j < animals.length; j++) {
+        //         if (uniq[i] === animals[j]) {
+        //             count += 1;
+        //         }
+        //     }
+        //     console.log(`${uniq[i]} = ${count}`);
+        //     count = 0;
+        // }
+
+
+        // Answer 5.3: comparing array elements with uniq object keys and finding each element's occurence. ❓❓❓❓❓❓
+
+        // var animals = ["cat", "tiger", "dog", "cat", "elephant", "mouse", "lion", "tiger", "cat", "dog", "donkey", "donkey", "cheetah", "mouse", "tiger"];
+        // var unique = {}
+        // for (var i = 0; i < animals.length; i++) {
+        //     if (unique[animals[i]] != null) {
+        //         unique[animals[i]] += 1;
+        //     }
+        //     else {
+        //         unique[animals[i]] = 1;
+        //     }
+        //     console.log(unique);
+        // }
+    
+    </script>
+
+
+    <br>
+    <hr>
+    <br>
+
+
+    <h2>Q6. Copy the text from first div to another div</h2>
+    <div id="textbox1" class="style1">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos nulla, consequuntur optio odit dolore nihil totam
+        magnam sit repellendus laborum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae magni
+        aperiam aut autem sequi voluptates? Harum debitis ad accusantium veritatis necessitatibus quam adipisci, nobis
+        magni ea ?
+    </div>
+    <div id="textbox2" class="style1"> </div>
+    <button onclick="gettext();"
+        style="margin: 10px; box-shadow: 2px 5px 10px; background-color: aquamarine; border-radius: 5px;">
+        GET TEXT
+    </button>
+
+    <!--  Answer 6 ❓❓❓❓❓❓ --> 
+    <script>
+        
+        function gettext() {
+            var data = document.getElementById("textbox1").innerHTML;
+            document.getElementById("textbox2").innerHTML = data;
+        }
+    </script>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q7. Using for loop print the multiplication and summation of all the array elements seperately</h2>
+    array = [1,2,3,4];
+
+    <!--  Answer 7 ❓❓❓❓❓❓ --> 
+    <script>
+        var mult_count=1;
+        var array = [1,2,3,4];
+        for(var i=0;i<array.length;i++){
+            mult_count= mult_count*array[i];
+        }
+        document.write("Product of all the array elements is "+mult_count+"<br>");
+    </script>
+
+
+    <br>
+    <hr>
+    <br>
+
+
+    <h2>Q8. Create a dropdwon with color options. Change the background color of the div when the value is selected from the dropwdown. In addition to that create more dropdowns for border-radius, box-shadows, border-thickness. And one input and button to change the content inside it.</h2>
+
+    <select onclick="fun1();" name="select_color"
+    style="width: auto; height: 30px; margin: 20px; text-align: center; box-shadow: 0 0 5px; font-size: 20px; border: 2px solid black; border-radius: 5px;"
+    id="dropdown">
+        <option value="white">Choose Color</option>
+        <option value="black">Black</option>
+        <option value="white">White</option>
+        <option value="red">Red</option>
+        <option value="green">Green</option>
+        <option value="yellow">Yellow</option>
+        <option value="orange">Orange</option>
+    </select>
+
+    <div class="div_style" id="box">Preview color </div>
+
+    <script type="text/javascript">
+        function fun1() {
+            var setcolor = document.getElementById('dropdown').value;
+            document.getElementById('box').style.backgroundColor = setcolor;
+        }
+    </script>
+
+
+    <br>
+    <hr>
+    <br>
+
+    <h2>Q8. Create a simple to do app like follows</h2>
+
+    <div id="myDIV" class="titlediv">
+        <h2>My To-Do list</h2>
+        <input type="text" id="input" placeholder="Task....">
+        <button onclick="addTask()" class="addBtn">Add</button>
+    </div>
+
+    <ul id="taskList"> </ul>
+
+    <script>
+        function addTask() {
+            var inputValue = document.getElementById("input").value;
+            var text = document.createTextNode(inputValue);
+            var newtask = document.createElement("li");
+            newtask.appendChild(text);
+
+            var button = document.createElement('button');
+            var button_text = document.createTextNode('Remove');
+            button.appendChild(button_text);
+            newtask.appendChild(button);
+
+            button.setAttribute("class", "remove_btn");
+
+            button.onclick = function () {
+                var active_div = this.parentNode;
+                active_div.remove();
+            }
+
+            var taskList = document.getElementById('taskList');
+
+            if (inputValue == "") {
+                alert("Please enter any task..")
+            }
+            else {
+                taskList.appendChild(newtask);
+            }
+            document.getElementById("input").value = '';
+        }
+    </script>
+
+
+
+    <br>
+    <hr>
+    <br>
+
+
+
+
+    <h2>Q9. Console all the values in object format </h2>
+    <form >
+        <label for="nameInput">Name:</label>
+        <input type="text" id="nameInput">
+        <label for="mathsMarks" id="mathsMarks">Maths</label>
+        <input type="number" placeholder="Enter marks obtained" id="mathsMarks">
+        <label for="geometryMarks">Geometry</label>
+        <input type="number" id="geometryMarks">
+        <label for="scienceMarks">Science</label>
+        <input type="number" id="scienceMarks">
+        <label for="historyMarks">History</label>
+        <input type="number" id="historyMarks">
+    </form>
+    <button id="btn2" class="button" onclick="getData();">Get Data </button>
+
+    <script type="text/javascript">
+        function getData() {
+            var data = {
+                stdName: document.getElementById('nameInput').value,
+                maths: document.getElementById('mathsMarks').value,
+                science: document.getElementById('scienceMarks').value,
+                history: document.getElementById('historyMarks').value,
+                geometry: document.getElementById('geometryMarks').value
+            };
+
+            console.log(data);
+        }
+    </script>
+
+
+
+    <br>
+    <hr>
+    <br>
+
+
+
+    <h2>Q 10. swapping of two numbers</h2>
+
+    <div style="display: flex;">
+        <input type="text" id="p1">
+        <input type="text" id="p2">
+    </div>
+    <button onclick="swap();" id="btn3" style="height: 80px; width: 150px;">Click here to swap</button>
+
+    <script type="text/javascript">
+        var num1;
+        var num2;
+        [num1, num2] = [document.getElementById('p1').value, document.getElementById('p2').value]
+
+        function swap() {
+            [num1, num2] = [document.getElementById('p2').value, document.getElementById('p1').value]
+            document.getElementById('p1').value = num1;
+            document.getElementById('p2').value = num2;
+        }
+    </script>
+
+
+
+    <div style="justify-content: center; font-size: 50px; background-color: #7d7d7d; margin-top: 50px; height: 200px; display: flex; align-items: center;"> 
+        <span>👌👌👌 ALL THE BEST 👍👍👍</span> 
+    </div>
+</body>
+
+</html>

@@ -15,7 +15,6 @@
     <button onclick="isEvenOrOdd()">check even or odd</button>
     <button onclick="checkDays()">check days in month</button>
 
-
     <div style="margin-top: 50px; background-color: coral;">
         <h1>BMI Calculator</h1>
         <label for="weight">Enter your weight (kg):</label>
@@ -42,16 +41,16 @@
     <div id="result"></div>
 
     <script>
-        // function isEvenOrOdd() {
-        //     var inputValue = Number(document.getElementById("ip").value);
-        //     var resultElement = document.getElementById("ele");
+        function isEvenOrOdd() {
+            var inputValue = Number(document.getElementById("ip").value);
+            var resultElement = document.getElementById("ele");
 
-        //     if (inputValue % 2 === 0) {
-        //         console.log("number is even");
-        //     } else {
-        //         console.log("number is odd");
-        //     }
-        // }
+            if (inputValue % 2 === 0) {
+                console.log("number is even");
+            } else {
+                console.log("number is odd");
+            }
+        }
 
         function fun1() {
             var inputValue = Number(document.getElementById("ip").value);
@@ -74,7 +73,6 @@
         // Normal weight = 18.5-24.9
         // Overweight = 25- 29.9
         // Obesity = BMI of 30 or greater
-
 
         function calculateBMI() {
             // Get the user's input

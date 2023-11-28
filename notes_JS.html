@@ -7,6 +7,10 @@
     <title>Js Notes</title>
 
     <style>
+        body {
+            background-color: #696969;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -39,855 +43,1689 @@
             width: 300px;
             border: 3px solid black;
         }
-
-        .tab-content {
-            display: none;
-        }
-
-        .tab-content.active {
-            display: block;
-        }
     </style>
 </head>
 
 <body>
-
-    <!-- 
-        // What is JavaScript ?
-
-    // Different ways of writing JavaScript
-    // - Inline JavaScript
-    // - Internal JavaScript
-    // - External JavaScript
-
-    // Different types of JavaScript
-    // Client-Side JavaScript: runs in a web browser, primarily used for enhancing the interactivity and functionality of web pages (React, Angular, Vue.js, jQuery)
-
-    // Server-Side JavaScript (Node.js): Server-side JavaScript, often powered by Node.js, is used for building server applications, APIs, and backend services. (Express.js, Nest.js)
-
-    // Mobile JavaScript:  Mobile JavaScript frameworks like React Native and NativeScript allow developers to build cross-platform mobile applications using JavaScript and related technologies. (React Native, NativeScript)
-    // .
-    // .
-    // .
-    // etc.
-
-    // --------------------------------------------------
-
-    // Primitive Data Types: immutable and represent single values. They are stored directly in memory and have a fixed size.
-    // Number: Represents both integer and floating-point numbers. Example: let age = 30;
-    // String: Represents a sequence of characters, enclosed in single (' ') or double (" ") quotes. Example: let name = 'John';
-    // Boolean: Represents a binary value of true or false. Example: let isStudent = true;
-    // Undefined: Represents a variable that has been declared but hasn't been assigned a value. Example: let score;
-    // Null: Represents the intentional absence of any object value. Example: let data = null;
-    // Symbol (ES6): Represents a unique and immutable value, often used as object property keys. Example: const uniqueKey = Symbol('description');
-    // BigInt (ES11): Represents large integers beyond the Number type's safe range. Example: const bigIntValue = 1234567890123456789012345678901234567890n;
-
-    // --------------------------------------------------
-
-    // Non-Primitive Data Types (Reference Data Types): mutable and represent collections of values or objects. They are stored as references in memory and can have varying sizes. Common non-primitive data types include:
-
-    // Object: Represents a collection of key-value pairs, where keys are strings (or Symbols) and values can be of any data type, including other objects. Objects can be customized and extended with properties and methods.
-    // Array: A specialized type of object that stores a list of values, indexed by integers (0-based). Arrays have built-in methods for manipulating and iterating over their elements.
-    // Function: Functions are objects in JavaScript and can be assigned to variables, passed as arguments, and returned from other functions. They are used for defining reusable blocks of code.
-    // Date: Represents dates and times and provides various methods for working with dates.
-    // RegExp: Represents regular expressions for pattern matching within strings.
-    // Custom Objects: Developers can create custom non-primitive data types by defining their own object types, classes, or prototypes.
-
-    // const employeeData = [
-    //     {
-    //         imgURL: "ename",
-    //         title: "gghyugdbg452435",
-    //         description: "description",
-    //         tags: ["product innovations", "product innovations",],
-    //         URL: "gsrgsg"
-    //     },
-    //     {
-    //         imgURL: "ename",
-    //         title: "gghyugdbg452435",
-    //         description: "description",
-    //         tags: ["product innovations", "product innovations",],
-    //         URL: "gsrgsg"
-    //     },
-    //     {
-    //         imgURL: "ename",
-    //         title: "gghyugdbg452435",
-    //         description: "description",
-    //         tags: ["product innovations", "product innovations",],
-    //         URL: "gsrgsg"
-    //     },
-    // ]
-
-    // --------------------------------------------------
-
-    // Using document.write() to add content to the page
-    // document.write("<h1>Hello, world!</h1>");
-
-    // --------------------------------------------------
-
-    // alert("hey")
-
-    // --------------------------------------------------
-
-    // Declaring Variables:
-    // var greeting = "Hello, world!";
-    // console.log(greeting); // Outputs: Hello, world!
-
-    // var age = 25;
-    // console.log(age); // Outputs: 25
-
-    // var isStudent = true;
-    // console.log(isStudent); // Outputs: true
-
-    // var bigNumber = BigInt("1234567890123456789012345678901234567890");
-    // console.log(bigNumber); // Outputs: 1234567890123456789012345678901234567890n
-
-    // MATHEMATICAL STRINGS
-
-    // Addition (+): Used for adding two numbers or concatenating strings.
-    // var sum = 5 + 3; // 8
-    // var fullName = "John" + " " + "Doe"; // "John Doe"
-
-    // var firstName = "siddhesh";
-    // var lastname = "chavan";
-    // console.log(`My name is ${firstName} and last name is ${lastname}`);
-    // CONCAT AS FOLLOWING: "My first name is _____ and last name is ______".
-
-    // Subtraction (-): Used for subtracting one number from another.
-    // var difference = 10 - 4; // 6
-
-    // Multiplication (*): Used for multiplying two numbers.
-    // var product = 6 * 7; // 42
-
-    // Division (/): Used for dividing one number by another
-    // var quotient = 20 / 5; // 4
-
-    // Exponential ():** Used for raising a number to a power
-    // var result = 2 ** 3; // 8 (2 raised to the power of 3)
-
-    // Modulus Remainder (%): Used for finding the remainder after division.
-    // var remainder = 10 % 2; // 1 (10 divided by 3 leaves a remainder of 1)
-    // console.log(remainder);
-
-    // Increment (++) and Decrement (--): Used for increasing or decreasing the value of a variable by 1, respectively. These can be used both in postfix and prefix form.
-    // var x = 5;
-    // console.log(x);
-    // x++; // Postfix increment (x is now 6)
-    // console.log(x);
-    // x--; // Postfix decrement (x is now 5)
-    // console.log(x);
-
-    // var y = 10;
-    // ++y; // Prefix increment (y is now 11)
-    // console.log(y);
-    // --y; // Prefix decrement (y is now 10)
-
-
-    // ASSIGNMENT OPERATORS
-    // += (Add and Assign):
-    // let num = 5;
-    // num += 3;  // Equivalent to num = num + 3;
-    // console.log(num);  // Output: 8
-
-    // -= (Subtract and Assign):
-    // let num = 10;
-    // num -= 4;  // Equivalent to num = num - 4;
-    // console.log(num);  // Output: 6
-
-    // /= (Divide and Assign):
-    // let num = 20;
-    // num /= 5;  // Equivalent to num = num / 5;
-    // console.log(num);  // Output: 4
-
-    //     *= (Multiply and Assign):
-    // let num = 3;
-    // num *= 6;  // Equivalent to num = num * 6;
-    // console.log(num);  // Output: 18
-
-    // **= (Exponentiate and Assign):
-    // let num = 2;
-    // num **= 3;  // Equivalent to num = num ** 3;
-    // console.log(num);  // Output: 8 (2 raised to the power of 3)
-
-    // COMPARISON OPERATORS:
-    // == (Equal to): Checks if two values are equal, but it doesn't consider data type.
-    // console.log(5 == '5');  // true, because the values are equal
-
-    // === (Equal to and compare the type): Checks if two values are equal and have the same data type.
-    // console.log(5 === '5');  // false, because the data types are different
-
-    // != (Not equal to): Checks if two values are not equal, regardless of data type.
-    // console.log(5 != '5');  // false, because the values are equal
-
-    // !== (Type and value not equal to): Checks if two values are not equal or have different data types.
-    // console.log(5 != '5');  // false, because the values are equal
-
-    // > (Greater than): Checks if one value is greater than another.
-    // console.log(10 > 5);  // true, because 10 is greater than 5
-
-    // < (Less than): Checks if one value is less than another.
-    // console.log(5 < 10);  // true, because 5 is less than 10
-
-    // >= (Greater than or equal to): Checks if one value is greater than or equal to another.
-    // console.log(10 >= 10);  // true, because 10 is equal to 10
-
-    // <= (Less than or equal to): Checks if one value is less than or equal to another.
-    // console.log(5 <= 10);  // true, because 5 is less than 10
-
-    // ? (Ternary Operator): It's not exactly a comparison operator but a conditional operator. It's used for conditional expressions.
-    // let age = 15;
-    // let status = age >= 18 ? 'Adult' : 'Minor';
-    //                            OR else
-    // let newStat = age >= 18 && age <= 50 ? "adult" : age > 50 ? "elder" : "Minor";
-    // console.log(status);  // 'Adult'
-
-
-    // LOGICAL OPERATORS
-    // && (Logical AND): Returns true if both operands are true.
-    // console.log(true && true);    // true
-    // console.log(true && false);   // false
-
-    // || (Logical OR): Returns true if at least one of the operands is true.
-    // console.log(true || false);   // true
-    // console.log(false || false);  // false
-
-    // !(Logical NOT): Inverts the value of the operand.
-    // console.log(!true);   // false
-    // console.log(!false);  // true
-
-    // Math.random(): Generates a random floating - point number between 0(inclusive) and 1(exclusive).
-    // let randomNum = Math.random();
-    // console.log(randomNum);
-
-    // Math.floor(): Rounds a number down to the nearest integer.
-    // let roundedDown = Math.floor(4.9);
-    // console.log(roundedDown);  // 4
-
-    // Math.sqrt(): Calculates the square root of a number.
-    // let squareRoot = Math.sqrt(16);
-    // console.log(squareRoot);  // 4
-
-    // Math.min(): Returns the smallest of zero or more numbers.
-    // let minNum = Math.min(23, 88, 1);
-    // console.log(minNum);  // 1
-
-    // Math.max(): Returns the largest of zero or more numbers.
-    // let maxNum = Math.max(839, 347, 99, 2);
-    // console.log(maxNum);  // 839
-
-    // Math.pow(x, y): Calculates x raised to the power of y.
-    // let result = Math.pow(2, 3);
-    // console.log(result);  // 8 (2^3)
-
-    // let numbers = [23, 88, 1, 42, 99, 7];
-    // let largest = Math.max.apply(null, numbers);
-    // console.log("The largest number is:", largest);  // Output: The largest number is: 99
-
-    //--------------------------------------------------------------------------------
-
-    // EXERCISE: Check if the value entered through prompt is even number or not
-
-    //--------------------------------------------------------------------------------
-
-    // EXERCISE: Write a JavaScript function called "convertFeetToInches" that
-    // takes a number of feet as a parameter and converts it to inches.Use the
-    // multiplication operator(*) to perform the conversion.The function should
-    // return the converted value in inches.
-
-    // function convertFeetToInches(feet) {
-    // 1 foot is equivalent to 12 inches, so we multiply feet by 12 to convert.
-    // return feet * 12;
-    // }
-
-    .
-
-
-    // // Example usage:
-    // let feetValue = 5; // Replace with the number of feet you want to convert
-    // let inchesValue = convertFeetToInches(feetValue);
-    // console.log(feetValue + " feet is equal to " + inchesValue + " inches.");
-
-    // ----------------------------------------------------------------------------------------
-
-    // EXERCISE: Write a JavaScript expression to calculate the average of
-    // three numbers, a, b, and c.
-
-    // const a = 10;  // Replace with your first number
-    // const b = 20;  // Replace with your second number
-    // const c = 30;  // Replace with your third number
-
-    // const average = (a + b + c) / 3;
-
-    // console.log("The average is:", average);
-
-    // ----------------------------------------------------------------------------------------
-
-    // EXERCISE: Create a JavaScript function that takes two parameters, num1
-    // and num2, and returns the larger of the two numbers.
-
-    // function findLargerNumber(num1, num2) {
-    //     if (num1 > num2) {
-    //         return num1;
-    //     } else {
-    //         return num2;
-    //     }
-    // }
-
-    // // Example usage:
-    // let number1 = 25; // Replace with your first number
-    // let number2 = 18; // Replace with your second number
-
-    // let largerNumber = findLargerNumber(number1, number2);
-    // console.log("The larger number is:", largerNumber);
-
-    // ----------------------------------------------------------------------------------------
-
-    // The use of RETURN keyword:
-    //  the return keyword is used within functions to specify the value that the function will produce or "return" when it is called.
-    // The return statement is also used to terminate the execution of a function.
-
-    // function add(a, b) {
-    //     let sum = a + b;
-    // }
-    // let result = add(5, 3);
-    // console.log(result); // Output: undefined
-
-    // function add(a, b) {
-    //     let sum = a + b;
-    //     return sum;
-    // }
-    // let result = add(5, 3);
-    // console.log(result); // Output: 8
-
-    // Using return to exit a function early
-    // function isPositive(number) {
-    //     if (number > 0) {
-    //         return true; // Exit the function and return true if number is positive
-    //     }
-    //     return false; // This line is only reached if number is not positive
-    // }
-    // console.log(isPositive(5));  // Output: true
-    // console.log(isPositive(-3)); // Output: false
-
-
-
-    // function determineGrade(score) {
-    //     if (score >= 90) {
-    //         return "A";
-    //     } else if (score >= 80) {
-    //         return "B";
-    //     } else if (score >= 70) {
-    //         return "C";
-    //     } else if (score >= 60) {
-    //         return "D";
-    //     } else {
-    //         return "F";
-    //     }
-    //     // The code here will never be reached because a return statement was used above.
-    // }
-
-    // let student1 = determineGrade(85);
-    // console.log("Student 1: " + student1); // Output: "Student 1: B"
-
-    // let student2 = determineGrade(45);
-    // console.log("Student 2: " + student2); // Output: "Student 2: F"
-
-    // ----------------------------------------------------------------------------------------
-
-    // String Methods
-    // text.length: Returns the length(number of characters) of a string.
-    // let text = "Hello, world!";
-    // let length = text.length;
-    // console.log(length); // Output: 13
-
-
-    // text.replace("to be replaced", "replaced with"): Replaces the specified substring with another substring in a string.
-    // let text = "I want to be replaced.";
-    // let newText = text.replace("replaced", "changed");
-    // console.log(text);
-    // console.log(newText); // Output: "I want to be changed."
-
-
-    // text.toUpperCase(): Converts all characters in a string to uppercase.
-    // let text = "Hello, world!";
-    // let uppercaseText = text.toUpperCase();
-    // console.log(uppercaseText); // Output: "HELLO, WORLD!"
-
-    // text.toLowerCase(): Converts all characters in a string to lowercase.
-    // let text = "Hello, WORLD!";
-    // let lowercaseText = text.toLowerCase();
-    // console.log(lowercaseText); // Output: "hello, world!"
-
-    // text.concat("Add this"): Concatenates(joins) two or more strings together.
-    // let text1 = "Hello, ";
-    // let text2 = "world!";
-    // let combinedText = text1.concat(text2);
-    // console.log(combinedText); // Output: "Hello, world!"
-
-    // text.trim(): Removes whitespace(spaces, tabs, etc.) from the beginning and end of a string.
-    // let text = "   Some text with spaces    ";
-    // let trimmedText = text.trim();
-    // console.log(trimmedText); // Output: "Some text with spaces"
-
-    // text.slice(2, 5): Extracts a portion of a string starting from index 2 up to, but not including, index 5.
-    // let text = "Hello, world!";
-    // let slicedText = text.slice(2, 5); // "llo"
-
-
-    // function stringContains(substring, inputString) {
-    //     // Use the String includes() method to check for substring existence
-    //     return inputString.includes(substring);
-    // }
-    // // Example usage:
-    // let text = "The quick brown fox jumps over the lazy dog.";
-    // let searchString = "fox";
-    // let result = stringContains(searchString, text);
-    // console.log(result); // Output: true
-
-
-
-    // Number() Function:
-    // The Number() function is used to convert a value to a number data type.It can be used to convert strings, booleans, and other data types to numbers.If the conversion is not possible, it returns NaN(Not - a - Number).
-
-    // var num = Number(prompt("enter Number"));
-
-    // console.log(num);
-
-    // parseInt() Function:
-    // The parseInt() function parses a string and returns an integer.It takes an optional second argument, called the radix, which specifies the base of the numeral system(e.g., base 10 for decimal numbers).
-
-
-    // isNaN() Function:
-    // The isNaN() function is used to check if a value is NaN(Not - a - Number).It returns true if the value is NaN, and false if it's a valid number.
-
-    // toString() Method:
-    // The toString() method is used to convert a number to its string representation. You can also specify the base for numerical systems other than base 10.
-
-    //     Accessing Elements
-    // document.getElementById();
-    // document.getElementsByClassName();
-    // document.getElementsByTagName();
-
-
-    // Modifying and accessing content
-    // .innerHTML:
-    // <div id="myDiv">This is some text.</div>
-
-    // // Get the HTML content of the element
-    // let content = document.getElementById("myDiv").innerHTML;
-    // console.log(content); // Output: "This is some text."
-
-    // // Set new HTML content for the element
-    // document.getElementById("myDiv").innerHTML = "<p>New content</p>";
-
-    // // .value
-    // <input type="text" id="textInput" value="Default Value" />
-    // // Get the value of the input field
-    // let inputValue = document.getElementById("textInput").value;
-    // console.log(inputValue); // Output: "Default Value"
-
-    // // Set a new value for the input field
-    // document.getElementById("textInput").value = "New Value";
-
-    // // Modifying attribute
-    // // .style Property:
-    // <div id="myDiv" style="color: blue;">This is a colored div.</div>
-    // Change the text color to red
-    // document.getElementById("myDiv").style.color = "red";
-
-    // // .src Property:
-    // <img id="myImage" src="image.jpg" alt="An image" />
-    // // Change the image source
-    // document.getElementById("myImage").src = "newImage.jpg";
-
-    // // .setAttribute("attributeName", "attributeValue") Method:
-    // <a id="myLink" href="https://www.example.com">Visit Example</a>
-    // // Change the href attribute of the link
-    // document.getElementById("myLink").setAttribute("href", "https://www.newexample.com");
-
-    // // .getAttribute("attributeName") Method:
-    // <a id="myLink" href="https://www.example.com">Visit Example</a>
-    // // Get the value of the href attribute of the link
-    // let linkHref = document.getElementById("myLink").getAttribute("href");
-    // console.log(linkHref); // Output: "https://www.example.com"
-
-    // Task 1: Change the background color of a <div> element with the ID "myDiv" to yellow.
-    // {
-    //     document.getElementById("myDiv").style.backgroundColor = "yellow";
-    // }
-    // // Task 2: Set the alt attribute of an image with the ID "myImage" to "A beautiful sunset."
-    // {
-    //     document.getElementById("myImage").setAttribute("alt", "A beautiful sunset");
-
-    // }
-    // // Task 3: Get the src attribute value of an image with the ID "myImage" and log it to the console.
-    // {
-    //     let imageSrc = document.getElementById("myImage").getAttribute("src");
-    //     console.log(imageSrc);
-    // }
-
-
-    // // Declaring a Function:
-    // function greet() {
-    //     console.log("Hello, world!");
-    // }
-
-    // const greet = function sayHello() {
-    //     console.log("Hello!");
-    // };
-
-    // const greet = function () {
-    //     console.log("Hello!");
-    // };
-
-    // // Arrow Function:
-    // const add = (a, b) => a + b;
-
-
-    // Using the onclick Event:
-    // <button id="myButton">Click me</button>
-
-    // function showMessage() {
-    //     alert("Button clicked!");
-    // }
-
-    // document.getElementById("myButton").onclick = showMessage;
-
-
-    // Calling events:
-    // Inline HTML Attribute:
-    // <button onclick="myFunction()">Click me</button>
-
-    // Using DOM Event Handlers:
-    // <button id="myButton">Click me</button>
-    // document.getElementById("myButton").onclick = function () {
-    //     alert("Button clicked!");
-    // };
-
-    // addEventListener Method:
-    <button id="myButton">Click me</button>
-    document.getElementById("myButton").addEventListener("click", function () {
-        alert("Button clicked!");
-    });
-
-    // Using Named Functions:
-    // <button id="myButton">Click me</button>
-    // function handleButtonClick() {
-    //     alert("Button clicked!");
-    // }
-    // document.getElementById("myButton").addEventListener("click", handleButtonClick);
-
-
-    // Event Delegation:
-    // <ul id="myList">
-    //     <li>Item 1</li>
-    //     <li>Item 2</li>
-    //     <li>Item 3</li>
-    // </ul>
-    // document.getElementById("myList").addEventListener("click", function (event) {
-    //     if (event.target.tagName === "LI") {
-    //         alert("List item clicked: " + event.target.textContent);
-    //     }
-    // });
-
-    ---------------------------------------------------------------------------------
-
-
-    NESTED LOOP
-
-    for (let i=0; i < outer.length; i++){
-        // outer operations;
-
-        for (let j=0; j < inner.length; j++){
-            // inner operations
-        }
-    }
-
-
--->
-
-    <!-- <div id="pyramid-container"></div>
-    <div id="inverted-pyramid-container"></div>
-    <div id="square-container"></div> -->
-
-    <!-- <div class="div1">box 1</div>
-    <div class="div1">box 2</div>
-    <div class="div1">box 3</div>
-    <button onclick="fun1();">ADD_COLOR</button> -->
-
-    <!-- <div class="style_div" ondblclick="funDbClick();" id="demo5">ondblclick</div> -->
-
-    <!-- <input type="text" name="input1" placeholder="Enter Your Name" oninput="onInput();" id="demo6"> -->
-
-    <!-- <input type="text" onfocus="onFocus();" id="demo10"> -->
-
-    <!-- <input onblur="onBlur();" value="On blur input" id="demo7"> -->
-
-    <!-- <textarea onselect="onSelect();" style="height: 300px;width: 400px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-    </textarea>
-    <button id="demo9" style="display: none;">copy</button> -->
-
-    <!-- <div class="style_div" id="demo11" oncopy="onCopy();">Lorem Ipsum is simply dummy text of the printing and
-        typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-        unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
-    </div> -->
-
-
-    <!-- <input type="text" name="" oncut="fun11();">
-    <input type="text" name="" onpaste="fun12();"> -->
-
-    <!-- <select onchange="onChange(this);">
-        <option>Mumbai</option>
-        <option>Pune</option>
-        <option>Nasik</option>
-    </select> -->
-
-    <!-- <input type="text" name="" onchange="onChangeInput(this)"> -->
-
-    <!-- <div id="nav">
-        <button href="#tab1">Tab 1</button>
-        <button href="#tab2">Tab 2</button>
-        <button href="#tab3">Tab 3</button>
-    </div>
-    <div id="tabs">
-        <div id="tab1" class="tab-content active">Content for Tab 1</div>
-        <div id="tab2" class="tab-content">Content for Tab 2</div>
-        <div id="tab3" class="tab-content">Content for Tab 3</div>
-    </div> -->
-
     <script>
-        // Task: Creating multiplication table
-        // for (let i = 1; i <= 10; i++) {
-        //     for (let j = 1; j <= 10; j++) {
-        //         let product = i * j;
-        //         console.log(`${i} x ${j} = ${product}`);
-        //     }
-        // }
+        {
+            // What is JavaScript ?
+
+            // Different ways of writing JavaScript
+            // - Inline JavaScript
+            // - Internal JavaScript
+            // - External JavaScript
+
+            // Different types of JavaScript
+            // Client-Side JavaScript: runs in a web browser, primarily used for enhancing the interactivity and functionality of web pages (React, Angular, Vue.js, jQuery)
+
+            // Server-Side JavaScript (Node.js): Server-side JavaScript, often powered by Node.js, is used for building server applications, APIs, and backend services. (Express.js, Nest.js)
+
+            // Mobile JavaScript:  Mobile JavaScript frameworks like React Native and NativeScript allow developers to build cross-platform mobile applications using JavaScript and related technologies. (React Native, NativeScript)
+            // .
+            // .
+            // .
+            // etc.
+
+            // --------------------------------------------------
+
+            // Primitive Data Types: immutable and represent single values. They are stored directly in memory and have a fixed size.
+            // Number: Represents both integer and floating-point numbers. Example: var age = 30;
+            // String: Represents a sequence of characters, enclosed in single (' ') or double (" ") quotes. Example: var name = 'John';
+            // Boolean: Represents a binary value of true or false. Example: var isStudent = true;
+            // Undefined: Represents a variable that has been declared but hasn't been assigned a value. Example: var score;
+            // Null: Represents the intentional absence of any object value. Example: var data = null;
+            // Symbol (ES6): Represents a unique and immutable value, often used as object property keys. Example: var uniqueKey = Symbol('description');
+            // BigInt (ES11): Represents large integers beyond the Number type's safe range. Example: var bigIntValue = 1234567890123456789012345678901234567890n;
+
+            // --------------------------------------------------
+
+            // Non-Primitive Data Types (Reference Data Types): mutable and represent collections of values or objects. They are stored as references in memory and can have varying sizes. Common non-primitive data types include:
+
+            // Object: Represents a collection of key-value pairs, where keys are strings (or Symbols) and values can be of any data type, including other objects. Objects can be customized and extended with properties and methods.
+            // Array: A specialized type of object that stores a list of values, indexed by integers (0-based). Arrays have built-in methods for manipulating and iterating over their elements.
+            // Function: Functions are objects in JavaScript and can be assigned to variables, passed as arguments, and returned from other functions. They are used for defining reusable blocks of code.
+            // Date: Represents dates and times and provides various methods for working with dates.
+            // RegExp: Represents regular expressions for pattern matching within strings.
+            // Custom Objects: Developers can create custom non-primitive data types by defining their own object types, classes, or prototypes.
+
+            // var employeeData = [
+            //     {
+            //         imgURL: "ename",
+            //         title: "gghyugdbg452435",
+            //         description: "description",
+            //         tags: ["product innovations", "product innovations",],
+            //         URL: "gsrgsg"
+            //     },
+            //     {
+            //         imgURL: "ename",
+            //         title: "gghyugdbg452435",
+            //         description: "description",
+            //         tags: ["product innovations", "product innovations",],
+            //         URL: "gsrgsg"
+            //     },
+            //     {
+            //         imgURL: "ename",
+            //         title: "gghyugdbg452435",
+            //         description: "description",
+            //         tags: ["product innovations", "product innovations",],
+            //         URL: "gsrgsg"
+            //     },
+            // ]
+
+            // --------------------------------------------------
+
+            // Using document.write() to add content to the page
+            // document.write("<h1>Hello, world!</h1>");
+
+            // --------------------------------------------------
+
+            // alert("hey")
+
+            // --------------------------------------------------
+
+            // Declaring Variables:
+            // var greeting = "Hello, world!";
+            // console.log(greeting); // Outputs: Hello, world!
+
+            // var age = 25;
+            // console.log(age); // Outputs: 25
+
+            // var isStudent = true;
+            // console.log(isStudent); // Outputs: true
+
+            // var bigNumber = BigInt("1234567890123456789012345678901234567890");
+            // console.log(bigNumber); // Outputs: 1234567890123456789012345678901234567890n
+
+            // Declaring a Function:
+            // function greet() {
+            //     console.log("Hello, world!");
+            // }
+
+            // var greet = function sayHello() {
+            //     console.log("Hello!");
+            // };
+
+            // var greet = function () {
+            //     console.log("Hello!");
+            // };
+
+            // --------------------------------------------------
+
+            // MATHEMATICAL STRINGS
+
+            // Addition (+): Used for adding two numbers or concatenating strings.
+            // var sum = 5 + 3; // 8
+            // var fullName = "John" + " " + "Doe"; // "John Doe"
+
+            // var firstName = "siddhesh";
+            // var lastname = "chavan";
+            // console.log(`My name is ${firstName} and last name is ${lastname}`);
+            // CONCAT AS FOLLOWING: "My first name is _____ and last name is ______".
+
+            // Subtraction (-): Used for subtracting one number from another.
+            // var difference = 10 - 4; // 6
+
+            // Multiplication (*): Used for multiplying two numbers.
+            // var product = 6 * 7; // 42
+
+            // Division (/): Used for dividing one number by another
+            // var quotient = 20 / 5; // 4
+
+            // Exponential ():** Used for raising a number to a power
+            // var result = 2 ** 3; // 8 (2 raised to the power of 3)
+
+            // Modulus Remainder (%): Used for finding the remainder after division.
+            // var remainder = 10 % 2; // 1 (10 divided by 3 leaves a remainder of 1)
+            // console.log(remainder);
+
+            // Increment (++) and Decrement (--): Used for increasing or decreasing the value of a variable by 1, respectively. These can be used both in postfix and prefix form.
+            // var x = 5;
+            // console.log(x);
+            // x++; // Postfix increment (x is now 6)
+            // console.log(x);
+            // x--; // Postfix decrement (x is now 5)
+            // console.log(x);
+
+            // var y = 10;
+            // ++y; // Prefix increment (y is now 11)
+            // console.log(y);
+            // --y; // Prefix decrement (y is now 10)
 
 
-        // Two-Dimensional Array
-        // const matrix = [
-        //     [1, 2, 3],
-        //     [4, 5, 6],
-        //     [7, 8, 9]
-        // ];
+            // ASSIGNMENT OPERATORS
+            // += (Add and Assign):
+            // var num = 5;
+            // num += 3;  // Equivalent to num = num + 3;
+            // console.log(num);  // Output: 8
 
-        // for (let i = 0; i < matrix.length; i++) {
-        //     for (let j = 0; j < matrix[i].length; j++) {
-        //         console.log(matrix[i][j]);
-        //     }
-        // }
+            // -= (Subtract and Assign):
+            // var num = 10;
+            // num -= 4;  // Equivalent to num = num - 4;
+            // console.log(num);  // Output: 6
 
+            // /= (Divide and Assign):
+            // var num = 20;
+            // num /= 5;  // Equivalent to num = num / 5;
+            // console.log(num);  // Output: 4
 
-        // right angle triangle pattern
-        // const height = 5;
-        // let patternHTML = '';
+            //     *= (Multiply and Assign):
+            // var num = 3;
+            // num *= 6;  // Equivalent to num = num * 6;
+            // console.log(num);  // Output: 18
 
-        // for (let i = 1; i <= height; i++) {
-        //     let pattern = '';
-        //     for (let j = 1; j <= i; j++) {
-        //         pattern += '⭕';
-        //     }
-        //     console.log(pattern);
-        //     patternHTML += `<p>${pattern}</p>`;
-        // }
-        // // Display the pattern in the "pyramid-container" div
-        // const pyramidContainer = document.getElementById("pyramid-container");
-        // pyramidContainer.innerHTML = patternHTML;
+            // **= (Exponentiate and Assign):
+            // var num = 2;
+            // num **= 3;  // Equivalent to num = num ** 3;
+            // console.log(num);  // Output: 8 (2 raised to the power of 3)
 
+            // COMPARISON OPERATORS:
+            // == (Equal to): Checks if two values are equal, but it doesn't consider data type.
+            // console.log(5 == '5');  // true, because the values are equal
 
-        // inverted right angle triangle pattern
-        // const invertedHeight = 5;
-        // let invertedPatternHTML = '';
+            // === (Equal to and compare the type): Checks if two values are equal and have the same data type.
+            // console.log(5 === '5');  // false, because the data types are different
 
-        // for (let i = invertedHeight; i >= 1; i--) {
-        //     let pattern = '';
-        //     for (let j = 1; j <= i; j++) {
-        //         pattern += '⭕';
-        //     }
-        //     console.log(pattern);
-        //     invertedPatternHTML += `<p>${pattern}</p>`;
-        // }
-        // // Display the pattern in the "inerted-pyramid-container" div
-        // const invertedPyramidContainer = document.getElementById("inverted-pyramid-container");
-        // invertedPyramidContainer.innerHTML = invertedPatternHTML;
+            // != (Not equal to): Checks if two values are not equal, regardless of data type.
+            // console.log(5 != '5');  // false, because the values are equal
 
+            // !== (Type and value not equal to): Checks if two values are not equal or have different data types.
+            // console.log(5 != '5');  // false, because the values are equal
 
-        // square pattern
-        // const size = 5;
-        // let squarePatternHTML = '';
-        // for (let i = 1; i <= size; i++) {
-        //     let pattern = '';
-        //     for (let j = 1; j <= size; j++) {
-        //         if (i === 1 || i === size || j === 1 || j === size) {
-        //             pattern += '⭕ ';
-        //         } else {
-        //             pattern += '   ';
-        //         }
-        //     }
-        //     squarePatternHTML += `<p>${pattern}</p>`;
-        //     console.log(pattern);
-        // }
-        // // Display the pattern in the "square-container" div
-        // const squareContainer = document.getElementById("square-container");
-        // squareContainer.innerHTML = squarePatternHTML;
+            // > (Greater than): Checks if one value is greater than another.
+            // console.log(10 > 5);  // true, because 10 is greater than 5
 
+            // < (Less than): Checks if one value is less than another.
+            // console.log(5 < 10);  // true, because 5 is less than 10
 
-        // PRINTING CHESS BOARD USING NESTED FOR LOOP
-        // const size = 8;
-        // for (let i = 1; i <= size; i++) {
-        //     let row = '';
-        //     for (let j = 1; j <= size; j++) {
-        //         if ((i + j) % 2 === 0) {
-        //             row += '■ '; // Black square
-        //         } else {
-        //             row += '□ '; // White square
-        //         }
-        //     }
-        //     console.log(row);
-        // }
+            // >= (Greater than or equal to): Checks if one value is greater than or equal to another.
+            // console.log(10 >= 10);  // true, because 10 is equal to 10
 
-        // word count and character count
-        // var mystr = "Hello world";
-        // var word = 1;
-        // var char = 0;
-        // for (var i = 0; i < mystr.length; i++) {
-        //     // document.write(mystr[i]);
-        //     if (mystr[i] == " ") {
-        //         word = word + 1
-        //     }
-        //     else {
-        //         char = char + 1
-        //     }
+            // <= (Less than or equal to): Checks if one value is less than or equal to another.
+            // console.log(5 <= 10);  // true, because 5 is less than 10
 
-        // }
-        // document.write("the num of word " + word + "<br>")
-        // document.write("the num of char " + char + "<br>")
+            // ? (Ternary Operator): It's not exactly a comparison operator but a conditional operator. It's used for conditional expressions.
+            // var age = 15;
+            // var status = age >= 18 ? 'Adult' : 'Minor';
+            //                            OR else
+            // var newStat = age >= 18 && age <= 50 ? "adult" : age > 50 ? "elder" : "Minor";
+            // console.log(status);  // 'Adult'
 
+            // LOGICAL OPERATORS
+            // && (Logical AND): Returns true if both operands are true.
+            // console.log(true && true);    // true
+            // console.log(true && false);   // false
 
-        // Adding css over array if elements
-        // var a = document.getElementsByClassName('div1');
-        // console.log(a)
-        // function fun1() {
-        //     for (var i = 0; i < a.length; i++) {
-        //         console.log(a[i]);
-        //         a[i].style.backgroundColor = "red";
-        //         a[i].className += " new_class"
-        //     }
-        // }
+            // || (Logical OR): Returns true if at least one of the operands is true.
+            // console.log(true || false);   // true
+            // console.log(false || false);  // false
 
-        // -----------------------------------------
-
-        // More Events
-        // 1.Double click event
-        function funDbClick() {
-            document.getElementById('demo5').style.backgroundColor = "blue";
+            // !(Logical NOT): Inverts the value of the operand.
+            // console.log(!true);   // false
+            // console.log(!false);  // true
         }
 
-        // 2.On input event
-        function onInput() {
-            let input = document.getElementById('demo6');
-            console.log(input.value);
+        // ⭕⭕⭕⭕⭕⭕ ---------- Arrays and Objects ----------- ⭕⭕⭕⭕⭕⭕
+        {
+            // // Declaring an array of numbers
+            // let numbers = [1, 2, 3, 4, 5];
+
+            // // Declaring an array of strings
+            // let fruits = ["apple", "banana", "cherry"];
+
+            // // Declaring an empty array
+            // let emptyArray = [];
+
+            // // Using the Array Constructor:
+            // let colors = new Array("red", "green", "blue");
+            // console.log(colors);
+
+            // Accessing Arrays:
+            // let fruits = ["apple", "banana", "cherry"];
+            //               0         1         2
+            // console.log(fruits);
+            // console.log(fruits[2]);
+
+            // // Accessing elements by index
+            // let firstFruit = fruits[0];
+            // let secondFruit = fruits[1];
+
+            // // Modifying elements
+            // fruits[2] = "strawberry"; // Update the third element to "strawberry"
+            // console.log(fruits);
+
+            // ARRAY METHODS:
+            // .toString(): method converts an array to a comma-separated string of its elements.
+            // let fruits = ["apple", "banana", "cherry"];
+            // let fruitString = fruits.toString(); // "apple,banana,cherry"
+            // console.log(fruitString);
+            // console.log(fruits);
+
+            // .join(separator): joins all elements of an array into a single string, using the specified separator between each element.
+            // let fruits = ["apple", "banana", "cherry"];
+            // let fruitString = fruits.join(" - "); // "apple - banana - cherry"
+            // console.log(fruitString);
+
+            // .pop(): The pop() method removes and returns the last element of an array.
+            // let fruits = ["apple", "banana", "cherry"];
+            // let removedFruit = fruits.pop();
+
+            // .push(element1, element2, ...): The push() method adds one or more elements to the end of an array and returns the new length of the array.
+            // let fruits = ["apple", "banana"];
+            // let newLength = fruits.push("cherry", "date"); // Adds two elements, newLength will be 4
+            // console.log(newLength);
+            // console.log(fruits);
+            // console.log(fruits.length);
+
+            // .shift(): The shift() method removes and returns the first element of an array.
+            // let fruits = ["apple", "banana", "cherry"];
+            // let removedFruit = fruits.shift(); // "apple", and "fruits" becomes ["banana", "cherry"]
+            // console.log(fruits, "shifted array");
+
+            // .unshift(element1, element2, ...): The unshift() method adds one or more elements to the beginning of an array and returns the new length of the array.
+            // let fruits = ["banana", "cherry"];
+            // let newLength = fruits.unshift("apple", "date"); // Adds two elements, newLength will be 4
+            // console.log(fruits, "unshifted array");
+
+            // .concat(array2): The concat() method combines two or more arrays and returns a new array without modifying the original arrays.
+            // let fruits = ["apple", "banana"];
+            // let moreFruits = ["cherry", "date"];
+            // let combinedArray = fruits.concat(moreFruits); // ["apple", "banana", "cherry", "date"]
+            // console.log(combinedArray, "COMBINED ARRAY");
+
+            // .splice(index, deleteCount, item1, item2, ...): The splice() method can be used to add, remove, or replace elements in an array at a specified index. It returns an array of removed elements.
+            // let fruits = ["apple", "banana", "cherry"];
+            // let removed = fruits.splice(1, 0, "lemon", "kiwi"); // Inserts "lemon" and "kiwi" at index 1
+            // console.log(fruits);
+            // console.log(removed);
+            // fruits becomes ["apple", "lemon", "kiwi", "banana", "cherry"];
+            // removed is an empty array
+
+            // .sort(): The sort() method sorts the elements of an array in place and returns the sorted array. By default, it sorts elements as strings.
+            // let fruits = ["banana", "apple", "cherry"];
+            // fruits.sort(); // ["apple", "banana", "cherry"];
+            // console.log(fruits);
+
+            // .reverse(): The reverse() method reverses the order of elements in an array in place and returns the reversed array.
+            // let fruits = ["apple", "banana", "cherry"];
+            // fruits.reverse(); // ["cherry", "banana", "apple"];
+
+            // ACCESSING AN OBJECT:
+            // Dot Notation: You can use dot notation to access object properties when you know the property name in advance.
+            // let person = {
+            //     name: "John",
+            //     age: 30,
+            //     city: "New York"
+            // };
+            // console.log(person.name);
+            // console.log(person.age);
+
+            // Bracket Notation: Bracket notation allows you to access object properties using a variable or when the property name contains special characters or spaces.
+            // let person = {
+            //     name: "John",
+            //     age: 30,
+            //     city: "New York"
+            // };
+            // let personName = "age";
+            // console.log(person[personName]);
+
+            // 1. Array Inside Array:
+            // let matrix = [
+            //     [1, 2, 3],
+            //     [4, 5, 6],
+            //     [7, 8, 9]
+            // ];
+            // Accessing element 6
+            // {
+            // console.log(matrix[1][2]);
+            // }
+
+            // 2. Object Inside Object:
+            // let person = {
+            //     name: "John",
+            //     address: {
+            //         street: "123 Main St",
+            //         city: "New York",
+            //     },
+            //     family: [
+            //         {
+            //             brother: "Max",
+            //             Sister: "Stacy"
+            //         },
+            //         {
+            //             mother: "Henry",
+            //             father: "Steve"
+            //         }
+            //     ]
+            // };
+            // console.log(person.family[0].Sister);
+            // Accessing the city property within the address object
+            // {
+            //     console.log(person.address.city);
+            // }
+
+            // 3. Array Inside Object:
+            // let student = {
+            //     name: "Alice",
+            //     grades: [85, 92, 78, 95]
+            // };
+            // Accessing the third grade (78)
+            // {
+            //     console.log(student.grades[2]);
+            // }
+
+            // 4. Object Inside Array:
+            // let books = [
+            //     { title: "Book 1", author: "Author 1" },
+            //     { title: "Book 2", author: "Author 2" }
+            // ];
+            // console.log(books[0].title); // Accessing the title of the first book
+
+            // Task : Object Inside Object
+            // Declare an object representing a car, and within that object, have another object representing its engine. Access the horsepower of the engine.
+
+            // Task : Array Inside Object
+            // Create an object representing a classroom and include an array of student names. Access the name of the second student in the list.
+
+            // var classroom = {
+            //     students: ["sita", "sofiya", "Hemali"]
+            // }
+
+            // Task : Object Inside Array
+            // Create an array of objects where each object represents a city with properties like "name" and "population." Access the population of the third city in the array.
+
+
+            // let books = [
+            //     {
+            //         title: "Book 1",
+            //         author: "Author 1",
+            //         genres: ["Science Fiction", "Adventure"]
+            //     },
+            //     {
+            //         title: "Book 2",
+            //         author: "Author 2",
+            //         genres: ["Fantasy", "Young Adult"]
+            //     },
+            //     {
+            //         title: "Book 3",
+            //         author: "Author 3",
+            //         genres: ["Mystery", "Thriller"]
+            //     },
+            //     {
+            //         title: "Book 4",
+            //         author: "Author 4",
+            //         genres: ["Historical Fiction", "Romance"]
+            //     },
+            //     // Add more books here
+            // ];
+
+            // Accessing the genres of the second book
         }
 
-        // 3.On Focus event
-        function onFocus() {
-            let input = document.getElementById('demo7');
-            console.log("input under focus");
+        // ⭕⭕⭕⭕⭕⭕ ---------- if else statement ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // var x = 10;
+            // if (x > 5) {
+            //     console.log("x is greater than 5");
+            // } else {
+            //     console.log("x is not greater than 5");
+            // }
+
+            // let y = 7;
+            // if (y > 10) {
+            //     console.log("y is greater than 10");
+            // } else if (y > 5) {
+            //     console.log("y is greater than 5 but not greater than 10");
+            // } else {
+            //     console.log("y is 5 or less");
+            // }
         }
 
-        // 4.On blur event
-        function onBlur() {
-            alert("onblur input event");
-            document.getElementById('demo7').style.backgroundColor = "red";
+        // ⭕⭕⭕⭕⭕⭕ ---------- return keyword ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // The use of RETURN keyword:
+            //  the return keyword is used within functions to specify the value that the function will produce or "return" when it is called.
+            // The return statement is also used to terminate the execution of a function.
+
+            // function add(a, b) {
+            //     var sum = a + b;
+            // }
+            // var result = add(5, 3);
+            // console.log(result); // Output: undefined
+
+            // function add(a, b) {
+            //     var sum = a + b;
+            //     return sum;
+            // }
+            // var result = add(5, 3);
+            // console.log(result); // Output: 8
+
+            // Using return to exit a function early
+            // function isPositive(number) {
+            //     if (number > 0) {
+            //         return true; // Exit the function and return true if number is positive
+            //     }
+            //     return false; // This line is only reached if number is not positive
+            // }
+            // console.log(isPositive(5));  // Output: true
+            // console.log(isPositive(-3)); // Output: false
+
+            // function determineGrade(score) {
+            //     if (score >= 90) {
+            //         return "A";
+            //     } else if (score >= 80) {
+            //         return "B";
+            //     } else if (score >= 70) {
+            //         return "C";
+            //     } else if (score >= 60) {
+            //         return "D";
+            //     } else {
+            //         return "F";
+            //     }
+            //     // The code here will never be reached because a return statement was used above.
+            // }
+
+            // var student1 = determineGrade(85);
+            // console.log("Student 1: " + student1); // Output: "Student 1: B"
+
+            // var student2 = determineGrade(45);
+            // console.log("Student 2: " + student2); // Output: "Student 2: F"
+
+            // --------------------------------------------------------------------------------
         }
 
-        // 5.On select event
-        function onSelect() {
-            document.getElementById('demo9').style.display = "block";
+        // ⭕⭕⭕⭕⭕⭕ ---------- Loops ----------- ⭕⭕⭕⭕⭕⭕
+        {
+            // While loop:
+            // let count = 0;
+            // while (count < 5) {
+            //     console.log("Count is: " + count);
+            //     count++;
+            // }
+
+            // Do...While loop:
+            // let count = 0;
+            // do {
+            //     console.log("Count is: " + count);
+            //     count++;
+            // } while (count < 5);
+
+            // For loop:
+            // for (initialization; condition; increment) {
+            //     // Code to be executed in each iteration
+            // }
+
+            // for (let i = 1; i <= 5; i++) {
+            //     console.log(i);
+            // }
+
+            // Iterating Over an Array
+            // const colors = ["red", "green", "blue", "yellow"];
+            // for (let i = 0; i < colors.length; i++) {
+            //     console.log(colors[i]);
+            // }
+
+            // For...In Loop: You can use a for...in loop to iterate over all the properties of an object and access them dynamically.
+            // let person = {
+            //     name: "John",
+            //     age: 30,
+            //     city: "New York"
+            // };
+
+            // for (let key in person) {
+            //     console.log(key + ": " + person[key]);
+            // }
+
+            // ❓❓❓ ---------- TASKS ---------- ❓❓❓
+            // ✨EXERCISE: Count from 5 to 1 and console the output.
+
+            // ✨EXERCISE: Write a JavaScript program which iterates the integers from 1
+            // to 100. But for multiples of three print "Fizz" instead of the number and for
+            // the multiples of five print "Buzz".For numbers which are multiples of both
+            // three and five print "FizzBuzz".
+            {
+                // for (let i = 1; i <= 100; i++) {
+                //     if (i % 3 === 0 && i % 5 === 0) {
+                //         console.log("FizzBuzz");
+                //     } else if (i % 3 === 0) {
+                //         console.log("Fizz");
+                //     } else if (i % 5 === 0) {
+                //         console.log("Buzz");
+                //     } else {
+                //         console.log(i);
+                //     }
+                // }
+            }
+
+            // ✨EXERCISE: Write a JavaScript program to sum the multiples of 3 and 5 under 1000.
+            {
+                // let sum = 0;
+                // for (let i = 1; i < 1000; i++) {
+                //     if (i % 3 === 0 || i % 5 === 0) {
+                //         sum += i;
+                //     }
+                // }
+                // console.log("The sum of multiples of 3 and 5 under 1000 is: " + sum);
+            }
+
+            // ✨EXERCISE: Write a JavaScript code to calculate the sum of all digits for the input(eg, input = 344 result should be 11)
+            {
+                // function sumOfDigits(input) {
+                //     // Convert the number to a string
+                //     const numStr = String(input);
+                //     let sum = 0;
+                //     // Iterate through each character of the string
+                //     for (let i = 0; i < numStr.length; i++) {
+                //         // Convert the character back to a number and add it to the sum
+                //         sum += parseInt(numStr[i]);
+                //     }
+                //     return sum;
+                // }
+                // const input = 2023;
+                // const result = sumOfDigits(input);
+                // console.log(`Sum of digits for ${input} is ${result}`);
+            }
+
+            // ✨EXERCISE: Write a JavaScript code to print Even numbers in given array
+            {
+                // function printEvenNumbers(arr) {
+                //     for (let i = 0; i < arr.length; i++) {
+                //         if (arr[i] % 2 === 0) {
+                //             console.log(arr[i]);
+                //         }
+                //     }
+                // }
+                // const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+                // console.log("Even numbers in the array:");
+                // printEvenNumbers(numbers);
+            }
+
+            // ✨EXERCISE: write a function to print the table of given number
+            {
+                // function printTable(num) {
+                //     for (let i = 1; i <= 10; i++) {
+                //         console.log(`${num} X ${i} = ${num * i}`);
+                //     }
+                // }
+                // printTable(7);
+            }
+
+            // ✨EXERCISE: Write a JavaScript code to collect the elements of an array which are string
+            {
+                // function collectStringsFromArray(arr) {
+                //     const stringElements = [];
+
+                //     for (let i = 0; i < arr.length; i++) {
+                //         if (typeof arr[i] === 'string') {
+                //             stringElements.push(arr[i]);
+                //         }
+                //     }
+
+                //     return stringElements;
+                // }
+                // // Example usage: Collect string elements from an array
+                // const mixedArray = ['Room No.', 201, 'Sea view apt', 'station road', 23, 'lane', 3, 'pincode', 400067];
+                // const stringsOnly = collectStringsFromArray(mixedArray);
+                // console.log('String elements in the array:');
+                // console.log(stringsOnly);
+            }
+
+            // ✨EXERCISE: Write a JavaScript code to delete all occurrences of elements in a given array(Function `deleteElement()` deletes all occurrences of element from the given array.)
+            {
+                // ○ var arr = [19,56,4,78,5,63,45,210,57];
+                // ○ arr = deleteElement(arr, 56)
+                // ○ console.log(arr); //[23, 4, 78, 5, 63, 45, 210]
+                // function deleteElement(arr, elementToDelete) {
+                //     // Create a new array to store the elements without the specified element
+                //     const newArray = [];
+
+                //     // Iterate through the original array
+                //     for (let i = 0; i < arr.length; i++) {
+                //         // Check if the current element is not equal to the element to delete
+                //         if (arr[i] !== elementToDelete) {
+                //             // If it's not equal, add it to the new array
+                //             newArray.push(arr[i]);
+                //         }
+                //     }
+                //     return newArray;
+                // }
+                // // Example usage:
+                // var arr = [23, 56, 4, 78, 5, 63, 45, 210, 56];
+                // arr = deleteElement(arr, 56);
+                // console.log(arr); // [23, 4, 78, 5, 63, 45, 210]
+            }
+
+            // ✨EXERCISE: Remove duplicate elements from an array.
+            {
+                // function removeDuplicates(arr) {
+                //     const uniqueArray = [];
+
+                //     for (let i = 0; i < arr.length; i++) {
+                //         if (uniqueArray.indexOf(arr[i]) === -1) {
+                //             console.log(uniqueArray.indexOf(arr[i]));
+                //             uniqueArray.push(arr[i]);
+                //             // The indexOf() method returns -1 if the element is not in the array.
+                //         }
+                //     }
+                //     return uniqueArray;
+                // }
+                // const originalArray = [1, 2, 2, 3, 4, 4, 5];
+                // console.log(originalArray.indexOf(19));
+                // const newArray = removeDuplicates(originalArray);
+                // console.log(newArray);
+            }
+
+            // ✨EXERCISE: check anagrams
+            {
+                // function checkStringsAnagram(a, b) {
+                //     let len1 = a.length;
+                //     let len2 = b.length;
+                //     if (len1 !== len2) {
+                //         console.log('Invalid Input');
+                //         return
+                //     }
+                //     let str1 = a.split('').sort().join('');
+                //     let str2 = b.split('').sort().join('');
+                //     console.log(typeof (str1));
+                //     console.log(typeof (str2));
+
+                //     if (str1 === str2) {
+                //         console.log("True");
+                //     } else {
+                //         console.log("False");
+                //     }
+                // }
+                // checkStringsAnagram("indian", "ndiani")
+            }
+
+            // ✨EXERCISE: String Compression: Write a function to compress a string by replacing repeated characters with their count. 
+            // For example, "aaabbbcccc" becomes "a3b3c4."
+            {
+                // function compressString(str) {
+                //     let compressed = '';
+                //     let count = 1;
+
+                //     for (let i = 0; i < str.length; i++) {
+                //         if (str[i] === str[i + 1]) {
+                //             count++;
+                //         } else {
+                //             compressed += str[i] + (count > 1 ? count : '1');
+                //             count = 1;
+                //         }
+                //     }
+                //     return compressed;
+                // }
+
+                // Example usage:
+                // const originalString = "aabbbcdd";
+                // const compressedString = compressString(originalString);
+                // console.log(`Compressed string: ${compressedString}`);
+            }
+
+            // 🌟🌟 word count and character count
+            // var mystr = "Hello world";
+            // var word = 1;
+            // var char = 0;
+            // for (var i = 0; i < mystr.length; i++) {
+            //     // document.write(mystr[i]);
+            //     if (mystr[i] == " ") {
+            //         word = word + 1
+            //     }
+            //     else {
+            //         char = char + 1
+            //     }
+            // }
+            // document.write("the num of word " + word + "<br>")
+            // document.write("the num of char " + char + "<br>")
         }
 
-        // 6.On copy event
-        function onCopy() {
-            document.getElementById('demo11').style.color = "red";
+        // ⭕⭕⭕⭕⭕⭕ ---------- Math functions ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // Math.random(): Generates a random floating - point number between 0(inclusive) and 1(exclusive).
+            // var randomNum = Math.random();
+            // console.log(randomNum);
+
+            // Math.floor(): Rounds a number down to the nearest integer.
+            // var roundedDown = Math.floor(4.9);
+            // console.log(roundedDown);  // 4
+
+            // Math.sqrt(): Calculates the square root of a number.
+            // var squareRoot = Math.sqrt(16);
+            // console.log(squareRoot);  // 4
+
+            // Math.min(): Returns the smallest of zero or more numbers.
+            // var minNum = Math.min(23, 88, 1);
+            // console.log(minNum);  // 1
+
+            // Math.max(): Returns the largest of zero or more numbers.
+            // var maxNum = Math.max(839, 347, 99, 2);
+            // console.log(maxNum);  // 839
+
+            // Math.pow(x, y): Calculates x raised to the power of y.
+            // var result = Math.pow(2, 3);
+            // console.log(result);  // 8 (2^3)
+
+
+            // ❓❓ ---------- TASKS ---------- ❓❓
+            // var numbers = [23, 88, 1, 42, 99, 7];
+            // var largest = Math.max.apply(null, numbers);
+            // console.log("The largest number is:", largest);  // Output: The largest number is: 99
+
+            // Create random numbers between following ranges:
+            // 1. 1 to 6
+            {
+                // var randomNumber1To6 = Math.floor(Math.random() * 6) + 1;
+                // console.log(randomNumber1To6);
+            }
+            // 2. 0 to 10
+            {
+                // var randomNumber0To10 = Math.floor(Math.random() * 11);
+                // console.log(randomNumber0To10);
+            }
+            // 3. 1 to 100
+            {
+                // var randomNumber1To100 = Math.floor(Math.random() * 100) + 1;
+                // console.log(randomNumber1To100);
+            }
+            // 4.  25 to 50
+            {
+                // var randomNumber25To50 = Math.floor(Math.random() * 26) + 25;
+                // console.log(randomNumber25To50);
+            }
+
+            // Random password generator:
+            {
+                // function generateRandomPassword(length) {
+                //     var charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+{}[]|;:,.<>?";
+
+                //     var password = '';
+                //     for (var i = 0; i < length; i++) {
+                //         var randomIndex = Math.floor(Math.random() * charset.length);
+                //         password += charset[randomIndex];
+                //     }
+
+                //     return password;
+                // }
+
+                // // Usage:
+                // var passwordLength = 12; // Change this to set the length of the password
+                // var generatedPassword = generateRandomPassword(passwordLength);
+                // console.log(generatedPassword);
+            }
+
+            //Random color generator:
+            {
+                // function generateRandomColor() {
+                //     var varters = '0123456789ABCDEF';
+                //     var color = '#';
+                //     for (var i = 0; i < 6; i++) {
+                //         color += varters[Math.floor(Math.random() * 16)];
+                //     }
+                //     return color;
+                // }
+
+                // // Usage:
+                // var randomColor = generateRandomColor();
+                // console.log(randomColor); // Output: '#4B76CC' (a randomly generated color)
+            }
+
         }
 
-        // 7.On cut event
-        function fun11() {
-            alert("on cut event triggered");
+        // ⭕⭕⭕⭕⭕⭕ ---------- Student practice questions ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // EXERCISE: Check if the value entered through prompt is even number or not
+            {
+                // function checkEvenNumber() {
+                //     var input;
+
+                //     do {
+                //         input = prompt("Enter a number:");
+                //         if (input === null) return "No input provided.";
+
+                //         if (!isNaN(input)) {
+                //             input = parseInt(input);
+                //             break;
+                //         } else {
+                //             alert("Invalid input. Please enter a valid number.");
+                //         }
+                //     } while (true);
+
+                //     if (input % 2 === 0) {
+                //         return `${input} is an even number.`;
+                //     } else {
+                //         return `${input} is not an even number.`;
+                //     }
+                // }
+                // var result = checkEvenNumber();
+                // console.log(result);
+            }
+
+            // EXERCISE: Check if the value entered through prompt is prime number or not
+            // EXERCISE: Check if the year entered through prompt is leap year or not
+
+            //--------------------------------------------------------------------------------
+
+            // EXERCISE: Write a JavaScript function called "convertFeetToInches" that
+            // takes a number of feet as a parameter and converts it to inches.Use the
+            // multiplication operator(*) to perform the conversion.The function should
+            // return the converted value in inches.
+            {
+                // function convertFeetToInches(feet) {
+                // 1 foot is equivalent to 12 inches, so we multiply feet by 12 to convert.
+                // return feet * 12;
+                // }
+                // // Example usage:
+                // var feetValue = 5; // Replace with the number of feet you want to convert
+                // var inchesValue = convertFeetToInches(feetValue);
+                // console.log(feetValue + " feet is equal to " + inchesValue + " inches.");
+
+            }
+
+            //--------------------------------------------------------------------------------
+
+            // EXERCISE: Write a JavaScript expression to calculate the average of three numbers, a, b, and c.
+            {
+                // var a = 10;  // Replace with your first number
+                // var b = 20;  // Replace with your second number
+                // var c = 30;  // Replace with your third number
+
+                // var average = (a + b + c) / 3;
+                // console.log("The average is:", average);
+            }
+
+            //--------------------------------------------------------------------------------
+
+            // EXERCISE: Create a JavaScript function that takes two parameters, num1 and num2, and returns the larger of the two numbers.
+            {
+                // function findLargerNumber(num1, num2) {
+                //     if (num1 > num2) {
+                //         return num1;
+                //     } else {
+                //         return num2;
+                //     }
+                // }
+                // Example usage:
+                // var number1 = 25; // Replace with your first number
+                // var number2 = 18; // Replace with your second number
+
+                // var largerNumber = findLargerNumber(number1, number2);
+                // console.log("The larger number is:", largerNumber);
+            }
         }
 
-        // 8.On paste event
-        function fun12() {
-            alert("on paste event triggered");
+        // ⭕⭕⭕⭕⭕⭕ ---------- String Methods ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // text.length: Returns the length(number of characters) of a string.
+            // var text = "Hello, world!";
+            // var length = text.length;
+            // console.log(length); // Output: 13
+
+            // text.replace("to be replaced", "replaced with"): Replaces the specified substring with another substring in a string.
+            // var text = "I want to be replaced.";
+            // var newText = text.replace("replaced", "changed");
+            // console.log(text);
+            // console.log(newText); // Output: "I want to be changed."
+
+            // text.toUpperCase(): Converts all characters in a string to uppercase.
+            // var text = "Hello, world!";
+            // var uppercaseText = text.toUpperCase();
+            // console.log(uppercaseText); // Output: "HELLO, WORLD!"
+
+            // text.toLowerCase(): Converts all characters in a string to lowercase.
+            // var text = "Hello, WORLD!";
+            // var lowercaseText = text.toLowerCase();
+            // console.log(lowercaseText); // Output: "hello, world!"
+
+            // text.concat("Add this"): Concatenates(joins) two or more strings together.
+            // var text1 = "Hello, ";
+            // var text2 = "world!";
+            // var combinedText = text1.concat(text2);
+            // console.log(combinedText); // Output: "Hello, world!"
+
+            // text.trim(): Removes whitespace(spaces, tabs, etc.) from the beginning and end of a string.
+            // var text = "   Some text with spaces    ";
+            // var trimmedText = text.trim();
+            // console.log(trimmedText); // Output: "Some text with spaces"
+
+            // text.slice(2, 5): Extracts a portion of a string starting from index 2 up to, but not including, index 5.
+            // var text = "Hello, world!";
+            // var slicedText = text.slice(2, 5); // "llo"
+
+            // function stringContains(substring, inputString) {
+            //     // Use the String includes() method to check for substring existence
+            //     return inputString.includes(substring);
+            // }
+            // // Example usage:
+            // var text = "The quick brown fox jumps over the lazy dog.";
+            // var searchString = "fox";
+            // var result = stringContains(searchString, text);
+            // console.log(result); // Output: true
         }
 
-        // 9.On change event
-        function onChange(ele) {
-            alert("Selected value: " + ele.value);
+        // ⭕⭕⭕⭕⭕⭕ ---------- More predefined functions ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // The Number() function is used to convert a value to a number data type.It can be used to convert strings, booleans, and other data types to numbers.If the conversion is not possible, it returns NaN(Not - a - Number).
+
+            // var num = Number(prompt("enter Number"));
+
+            // console.log(num);
+
+            // parseInt() Function:
+            // The parseInt() function parses a string and returns an integer.It takes an optional second argument, called the radix, which specifies the base of the numeral system(e.g., base 10 for decimal numbers).
+
+            // parseFloat and parseInt
+            // ParseFloat takes string as input and gives a floting point number. it will neglect spaces and string after the digits. if 42.5zzz then 42.5 will be th output
+            // ParseInt will give the whole number. if 42.5zzz then 42 will be th output
+
+            // isNaN() Function:
+            // The isNaN() function is used to check if a value is NaN(Not - a - Number).It returns true if the value is NaN, and false if it's a valid number.
+
+            // toString() Method:
+            // The toString() method is used to convert a number to its string representation. You can also specify the base for numerical systems other than base 10.
         }
 
-        function onChangeInput(ele) {
-            alert("Input value: " + ele.value);
+        // ⭕⭕⭕⭕⭕⭕ ---------- DOM manipulation ---------- ⭕⭕⭕⭕⭕⭕
+        {
+            // document.getElementById();
+            // document.getElementsByClassName();
+            // document.getElementsByTagName();
+
+            // Modifying and accessing content
+            // .innerHTML:
+            // <div id="myDiv">This is some text.</div>
+
+            // Get the HTML content of the element
+            // var content = document.getElementById("myDiv").innerHTML;
+            // console.log(content); // Output: "This is some text."
+
+            // Set new HTML content for the element
+            // document.getElementById("myDiv").innerHTML = "<p>New content</p>";
+
+            // .value
+            // <input type="text" id="textInput" value="Default Value" />
+            // Get the value of the input field
+            // var inputValue = document.getElementById("textInput").value;
+            // console.log(inputValue); // Output: "Default Value"
+
+            // Set a new value for the input field
+            // document.getElementById("textInput").value = "New Value";
+
+            // Modifying attribute
+            // .style Property:
+            // <div id="myDiv" style="color: blue;">This is a colored div.</div>
+            // Change the text color to red
+            // document.getElementById("myDiv").style.color = "red";
+
+            // .src Property:
+            // <img id="myImage" src="image.jpg" alt="An image" />
+            // // Change the image source
+            // document.getElementById("myImage").src = "newImage.jpg";
+
+            // .setAttribute("attributeName", "attributeValue") Method:
+            // <a id="myLink" href="https://www.example.com">Visit Example</a>
+            // // Change the href attribute of the link
+            // document.getElementById("myLink").setAttribute("href", "https://www.newexample.com");
+
+            // .getAttribute("attributeName") Method:
+            // <a id="myLink" href="https://www.example.com">Visit Example</a>
+            // // Get the value of the href attribute of the link
+            // var linkHref = document.getElementById("myLink").getAttribute("href");
+            // console.log(linkHref); // Output: "https://www.example.com"
+
+            // ❓❓❓ Task 1: Change the background color of a <div> element with the ID "myDiv" to yellow.
+            // {
+            //     document.getElementById("myDiv").style.backgroundColor = "yellow";
+            // }
+
+            // ❓❓❓ Task 2: Get the src attribute value of an image with the ID "myImage" and log it to the console.
+            // {
+            //     var imageSrc = document.getElementById("myImage").getAttribute("src");
+            //     console.log(imageSrc);
+            // }
+
+            // ❓❓❓ Task 3: Set the alt attribute of an image with the ID "myImage" to "A beautiful sunset."
+            // {
+            //     document.getElementById("myImage").setAttribute("alt", "A beautiful sunset");
+            // }
         }
 
+        // ⭕⭕⭕⭕⭕⭕ -------- Applying event on element -------- ⭕⭕⭕⭕⭕⭕
+        {
+            // <button id="myButton">Click me</button>
 
-        // The forEach method is a higher-order function in JavaScript that is used to iterate over elements in an array and execute a provided callback function for each element in the array. It simplifies the process of iterating over an array, making the code cleaner and more concise.
+            // function showMessage() {
+            //     alert("Button clicked!");
+            // }
 
-        // Key points to remember about forEach:
-        // It does not create a new array; it is used for iteration and side effects.
-        // It is an alternative to using a for loop when you need to iterate over array elements.
-        // It is easy to read and makes the code more expressive.
+            // document.getElementById("myButton").onclick = showMessage;
 
-        // NAV AND TABS
-        // document.getElementById("nav").addEventListener("click", function (event) {
-        //     const index = Array.from(this.children).indexOf(event.target);
-        //     if (index >= 0) {
-        //         showTab(index);
-        //     }
-        // });
-        // function showTab(index) {
-        //     const tabContents = document.querySelectorAll(".tab-content");
-        //     tabContents.forEach((tabContent, i) => {
-        //         if (i === index) {
-        //             tabContent.classList.add("active");
-        //         } else {
-        //             tabContent.classList.remove("active");
-        //         }
-        //     });
-        // }
+            // Calling events:
+            // Inline HTML Attribute:
+            // <button onclick="myFunction()">Click me</button>
+
+            // Using DOM Event Handlers:
+            // <button id="myButton">Click me</button>
+            // document.getElementById("myButton").onclick = function () {
+            //     alert("Button clicked!");
+            // };
+
+            // addEventListener Method:
+            // <button id="myButton">Click me</button>
+            // document.getElementById("myButton").addEventListener("click", function () {
+            //     alert("Button clicked!");
+            // });
+
+            // Using Named Functions:
+            // <button id="myButton">Click me</button>
+            // function handleButtonClick() {
+            //     alert("Button clicked!");
+            // }
+            // document.getElementById("myButton").addEventListener("click", handleButtonClick);
+
+            // Event Delegation:
+            // <ul id="myList">
+            //     <li>Item 1</li>
+            //     <li>Item 2</li>
+            //     <li>Item 3</li>
+            // </ul>
+            // document.getElementById("myList").addEventListener("click", function (event) {
+            //     if (event.target.tagName === "li") {
+            //         alert("List item clicked: " + event.target.textContent);
+            //     }
+            // });
+
+            // 🌟🌟 Adding css over array of elements
+            // <div class="div1">box 1</div>
+            // <div class="div1">box 2</div>
+            // <div class="div1">box 3</div>
+            // <button onclick="fun1();">ADD_COLOR</button>
+
+            // var a = document.getElementsByClassName('div1');
+            // console.log(a)
+            // function fun1() {
+            //     for (var i = 0; i < a.length; i++) {
+            //         console.log(a[i]);
+            //         a[i].style.backgroundColor = "red";
+            //         a[i].className += " new_class"
+            //     }
+            // }
+
+            // <div class="style_div" ondblclick="funDbClick();" id="demo5">ondblclick</div> 
+
+            // <input type="text" name="input1" placeholder="Enter Your Name" oninput="onInput();" id="demo6"> 
+
+            // <input type="text" onfocus="onFocus();" id="demo10"> 
+
+            // <input onblur="onBlur();" value="On blur input" id="demo7"> 
+
+            // <textarea onselect="onSelect();" style="height: 300px;width: 400px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of varraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+            // </textarea>
+            // <button id="demo9" style="display: none;">copy</button> 
+
+            // <div class="style_div" id="demo11" oncopy="onCopy();">Lorem Ipsum is simply dummy text of the printing and
+            //     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+            //     unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+            // </div> 
 
 
-        //break:
-        //continue:
-        //return:
-        // SWITCHCASE
+            // <input type="text" name="" oncut="fun11();">
+            // <input type="text" name="" onpaste="fun12();"> 
 
-        //setTimeout() is a function that allows you to execute a function or code snippet after a specified delay(in milliseconds).
-        //It takes two parameters: a function to execute and the delay before execution.
+            // <select onchange="onChange(this);">
+            //     <option>Mumbai</option>
+            //     <option>Pune</option>
+            //     <option>Nasik</option>
+            // </select> 
 
-        //clearTimeout() is used to cancel a timeout previously set with setTimeout().You provide the timeout ID returned by setTimeout() to clear it.
+            // <input type="text" name="" onchange="onChangeInput(this)"> 
 
-        //setInterval() is used to repeatedly execute a function or code snippet at a specified interval(in milliseconds).
-        //It also takes two parameters: a function to execute and the interval between executions.
+            // More Events
+            // 1.Mouse Events
+            function handleClick() {
+                console.log("Button clicked!");
+            }
 
-        //clearInterval() is used to stop the execution of a function or code snippet that was set to run at specified intervals using setInterval().
-        //You provide the interval ID returned by setInterval() to clear it.
+            function funDbClick() {
+                document.getElementById('demo5').style.backgroundColor = "blue";
+            }
+
+            function handleMouseOver() {
+                console.log("Mouse over the div!");
+            }
+
+            function handleMouseOut() {
+                console.log("Mouse out of the div!");
+            }
+
+            function handleMouseDown() {
+                console.log("Mouse button pressed!");
+            }
+
+            function handleMouseUp() {
+                console.log("Mouse button released!");
+            }
+
+            // mousemoveContainer.addEventListener('mousemove', function (event) {
+            //     const randomNumber = Math.floor(Math.random() * 100);
+            //     mousemoveResult.textContent = `Random Number: ${randomNumber}`;
+            // });
+
+            // 2.On input event
+            function onInput() {
+                var input = document.getElementById('demo6');
+                console.log(input.value);
+            }
+
+            // 3.On Focus event
+            function onFocus() {
+                var input = document.getElementById('demo7');
+                console.log("input under focus");
+            }
+
+            // 4.On blur event
+            function onBlur() {
+                alert("onblur input event");
+                document.getElementById('demo7').style.backgroundColor = "red";
+            }
+
+            // 5.On select event
+            function onSelect() {
+                document.getElementById('demo9').style.display = "block";
+            }
+
+            // 6.On copy event
+            function onCopy() {
+                document.getElementById('demo11').style.color = "red";
+            }
+
+            // 7.On cut event
+            function fun11() {
+                alert("on cut event triggered");
+            }
+
+            // 8.On paste event
+            function fun12() {
+                alert("on paste event triggered");
+            }
+
+            // 9.On change event
+            function onChange(ele) {
+                alert("Selected value: " + ele.value);
+            }
+
+            function onChangeInput(ele) {
+                console.log("Input value: " + ele.value);
+            }
+
+            // 10. keyup and keydown events
+            function onKeyUp(ele) {
+                console.log("Input value: " + ele.value);
+            }
+            function onKeyDown(ele) {
+                console.log("Input value: " + ele.value);
+            }
+        }
+
+        // 🌟🌟🌟 Navigate to projects_01.html, accordion.html 🌟🌟🌟
+
+        // ⭕⭕⭕⭕⭕⭕ -------- Nested loops -------- ⭕⭕⭕⭕⭕⭕
+        {
+            // for (var i=0; i < outer.length; i++){
+            //     // outer operations;
+
+            //     for (var j=0; j < inner.length; j++){
+            //         // inner operations
+            //     }
+            // }
+
+            // <div id="pyramid-container"></div>
+            // <div id="inverted-pyramid-container"></div>
+            // <div id="square-container"></div>
+
+            // 🌟🌟 right angle triangle pattern
+            // var height = 5;
+            // var patternHTML = '';
+
+            // for (var i = 1; i <= height; i++) {
+            //     var pattern = '';
+            //     for (var j = 1; j <= i; j++) {
+            //         pattern += '⭕';
+            //     }
+            //     console.log(pattern);
+            //     patternHTML += `<p>${pattern}</p>`;
+            // }
+            // // Display the pattern in the "pyramid-container" div
+            // var pyramidContainer = document.getElementById("pyramid-container");
+            // pyramidContainer.innerHTML = patternHTML;
+
+            // 🌟🌟 inverted right angle triangle pattern
+            // var invertedHeight = 5;
+            // var invertedPatternHTML = '';
+
+            // for (var i = invertedHeight; i >= 1; i--) {
+            //     var pattern = '';
+            //     for (var j = 1; j <= i; j++) {
+            //         pattern += '⭕';
+            //     }
+            //     console.log(pattern);
+            //     invertedPatternHTML += `<p>${pattern}</p>`;
+            // }
+            // // Display the pattern in the "inerted-pyramid-container" div
+            // var invertedPyramidContainer = document.getElementById("inverted-pyramid-container");
+            // invertedPyramidContainer.innerHTML = invertedPatternHTML;
+
+            // 🌟🌟 square pattern
+            // var size = 5;
+            // var squarePatternHTML = '';
+            // for (var i = 1; i <= size; i++) {
+            //     var pattern = '';
+            //     for (var j = 1; j <= size; j++) {
+            //         if (i === 1 || i === size || j === 1 || j === size) {
+            //             pattern += '⭕ ';
+            //         } else {
+            //             pattern += '   ';
+            //         }
+            //     }
+            //     squarePatternHTML += `<p>${pattern}</p>`;
+            //     console.log(pattern);
+            // }
+            // // Display the pattern in the "square-container" div
+            // var squareContainer = document.getElementById("square-container");
+            // squareContainer.innerHTML = squarePatternHTML; 
+
+            // 🌟🌟 Task: Creating multiplication table
+            // for (var i = 1; i <= 10; i++) {
+            //     for (var j = 1; j <= 10; j++) {
+            //         var product = i * j;
+            //         console.log(`${i} x ${j} = ${product}`);
+            //     }
+            // }
+
+            // 🌟🌟 Two-Dimensional Array
+            // var matrix = [
+            //     [1, 2, 3],
+            //     [4, 5, 6],
+            //     [7, 8, 9]
+            // ];
+
+            // for (var i = 0; i < matrix.length; i++) {
+            //     for (var j = 0; j < matrix[i].length; j++) {
+            //         console.log(matrix[i][j]);
+            //     }
+            // }
+
+            // 🌟🌟 PRINTING CHESS BOARD USING NESTED FOR LOOP
+            // var size = 8;
+            // for (var i = 1; i <= size; i++) {
+            //     var row = '';
+            //     for (var j = 1; j <= size; j++) {
+            //         if ((i + j) % 2 === 0) {
+            //             row += '■ '; // Black square
+            //         } else {
+            //             row += '□ '; // White square
+            //         }
+            //     }
+            //     console.log(row);
+            // }
+        }
+
+        // ⭕⭕⭕⭕⭕⭕ -------- break, return, switch -------- ⭕⭕⭕⭕⭕⭕
+        {
+            //break:
+            // for (let i = 1; i <= 5; i++) {
+            //     if (i === 3) {
+            //         break; // This will exit the loop when i is 3
+            //     }
+            //     console.log(i, "This will exit the loop when i is 3");
+            // }
+
+            //continue:
+            // for (let i = 1; i <= 5; i++) {
+            //     if (i === 3) {
+            //         continue; // This will skip the current iteration when i is 3
+            //     }
+            //     console.log(i, "This will skip the current iteration when i is 3");
+            // }
+
+            //return:
+            // function add(a, b) {
+            //     return a + b; // Returns the sum of a and b
+            // }
+            // let result = add(5, 3);
+            // console.log(result, "🤔🤔🤔🤔🤔"); // Prints 8
+
+            //eval()(use with caution):
+            // let x = 10;
+            // let y = 20;
+            // let code = "x + y";
+            // let eresult = eval(code); // Evaluates the code and returns the result
+            // console.log(eresult); // Prints 30
+
+            // SWITCHCASEexample:
+            // switch (valueToCompare) {
+            //     case conditio1:
+            //         result1;
+            //         break;
+            //     case conditio2:
+            //         result1;
+            //         break;
+            //     default:
+            //         defaultresult;
+            // }
+
+            // var day = 3;
+            // var dayName;
+
+            // switch (day) {
+            //     case 1:
+            //         dayName = "Monday";
+            //         break;
+            //     case 2:
+            //         dayName = "Tuesday";
+            //         break;
+            //     case 3:
+            //         dayName = "Wednesday";
+            //         break;
+            //     case 4:
+            //         dayName = "Thursday";
+            //         break;
+            //     case 5:
+            //         dayName = "Friday";
+            //         break;
+            //     case 6:
+            //         dayName = "Saturday";
+            //         break;
+            //     case 7:
+            //         dayName = "Sunday";
+            //         break;
+            //     default:
+            //         dayName = "Invalid day";
+            // }
+            // console.log("Today is " + dayName);
 
 
-        // ● Accessing elements
-        //      ○ document.querySelector()
-        // document.querySelector(): This method allows you to select the first element that matches a given CSS selector.
-        //      ○ document.querySelectorAll()
-        // document.querySelectorAll(): This method selects all elements that match a given CSS selector and returns a NodeList, which is similar to an array.
+            // Function to calculate the area of a circle
+            // function calculateCircleArea(radius) {
+            //     return Math.PI * Math.pow(radius, 2);
+            // }
 
-        // ● Adding & removing elements
-        //      ○ .createElement():  This method creates a new HTML element.
-        //      ○ .appendChild():  This method is used to add a child element to a parent element.
-        //      ○ .createTextNode():  This method creates a text node that can be added to an element.
-        //      ○ .remove()
-        //      ○ .childNodes:  This property returns a NodeList of all child nodes (including elements, text nodes, etc.) of an element.
-        //      ○ .children:  This property returns an HTMLCollection of child elements of an element.
-        //      ○ .parentNode
+            // Function to calculate the area of a rectangle
+            // function calculateRectangleArea(length, width) {
+            //     return length * width;
+            // }
+
+            // Function to calculate the area of a triangle
+            // function calculateTriangleArea(base, height) {
+            //     return 0.5 * base * height;
+            // }
+
+            // Get the user's choice of shape
+            // var shape = prompt("Enter the shape (circle, rectangle, triangle):");
+
+            // switch (shape) {
+            //     case "circle":
+            //         var radius = parseFloat(prompt("Enter the radius:"));
+            //         if (!isNaN(radius)) {
+            //             var area = calculateCircleArea(radius);
+            //             console.log("The area of the circle is " + area.toFixed(2) + " square units.");
+            //         } else {
+            //             console.log("Invalid input for radius.");
+            //         }
+            //         break;
+            //     case "rectangle":
+            //         var length = parseFloat(prompt("Enter the length:"));
+            //         var width = parseFloat(prompt("Enter the width:"));
+            //         if (!isNaN(length) && !isNaN(width)) {
+            //             var area = calculateRectangleArea(length, width);
+            //             console.log("The area of the rectangle is " + area + " square units.");
+            //         } else {
+            //             console.log("Invalid input for length or width.");
+            //         }
+            //         break;
+            //     case "triangle":
+            //         var base = parseFloat(prompt("Enter the base:"));
+            //         var height = parseFloat(prompt("Enter the height:"));
+            //         if (!isNaN(base) && !isNaN(height)) {
+            //             var area = calculateTriangleArea(base, height);
+            //             console.log("The area of the triangle is " + area + " square units.");
+            //         } else {
+            //             console.log("Invalid input for base or height.");
+            //         }
+            //         break;
+            //     default:
+            //         console.log("Invalid shape choice.");
+            // }
+        }
+
+        // ⭕⭕⭕⭕⭕⭕ -------- timing functions -------- ⭕⭕⭕⭕⭕⭕
+        {
+            //setTimeout():
+            //setTimeout() is a function that allows you to execute a function or code snippet after a specified delay(in milliseconds).
+            //It takes two parameters: a function to execute and the delay before execution.
+
+            // setTimeout(function () {
+            //     console.log("This message will appear after 2000 milliseconds (2 seconds).");
+            // }, 2000);
+
+            //clearTimeout():
+            //clearTimeout() is used to cancel a timeout previously set with setTimeout().You provide the timeout ID returned by setTimeout() to clear it.
+
+            // let timeoutId = setTimeout(function () {
+            //     console.log("This won't appear.");
+            // }, 2000);
+            // clearTimeout(timeoutId);
+
+            //setInterval():
+            //setInterval() is used to repeatedly execute a function or code snippet at a specified interval(in milliseconds).
+            //It also takes two parameters: a function to execute and the interval between executions.
+
+            // setInterval(function () {
+            //     console.log("This message will appear every 1000 milliseconds (1 second).");
+            // }, 1000);
+
+            //clearInterval():
+            //clearInterval() is used to stop the execution of a function or code snippet that was set to run at specified intervals using setInterval().
+            //You provide the interval ID returned by setInterval() to clear it.
+
+            // let intervalId = setInterval(function () {
+            //     console.log("This message will appear repeatedly.");
+            // }, 1000);
+            // clearInterval(intervalId);
+
+
+            // 🌟🌟 Creating a progress bar
+            // <span id="progress-bar"></span>
+            // <button onclick="startProgressBar()">Start Progress</button>
+            // <button onclick="stopProgressBar()">Stop Progress</button>
+
+            // #progress - bar {
+            //     width: 0;
+            //     display: block;
+            //     height: 30px;
+            //     background - color: #4CAF50;
+            // }
+
+            // //targetting element
+            // let progressBar = document.getElementById("progress-bar");
+            // //creating width variable
+            // let width = 0;
+            // let intervalId2;
+
+            // function startProgressBar() {
+            //     intervalId2 = setInterval(increaseProgressBar, 50);
+            // }
+
+            // function stopProgressBar() {
+            //     clearInterval(intervalId2);
+            // }
+
+            // function increaseProgressBar() {
+            //     if (width >= 100) {
+            //         clearInterval(intervalId2);
+            //     } else {
+            //         width++;
+            //         progressBar.style.width = width + "%";
+            //     }
+            // }
+        }
+
+        // ⭕⭕⭕⭕⭕⭕ -------- DOM Manipulation 2 -------- ⭕⭕⭕⭕⭕⭕
+        {
+            // ● Accessing elements
+            //      ○ document.querySelector()
+            // document.querySelector(): This method allows you to select the first element that matches a given CSS selector.
+            //      ○ document.querySelectorAll()
+            // document.querySelectorAll(): This method selects all elements that match a given CSS selector and returns a NodeList, which is similar to an array.
+
+            // ● Adding & removing elements
+            //      ○ .createElement():  This method creates a new HTML element.
+            //      ○ .appendChild():  This method is used to add a child element to a parent element.
+            //      ○ .createTextNode():  This method creates a text node that can be added to an element.
+            //      ○ .remove()
+            //      ○ .childNodes:  This property returns a NodeList of all child nodes (including elements, text nodes, etc.) of an element.
+            //      ○ .children:  This property returns an HTMLCollection of child elements of an element.
+            //      ○ .parentNode
+
+            //    <div class="example-div1"></div>
+            // <div class="example-div1"></div>
+            // <div class="example-div1"></div>
+            // <div class="example-div1"></div>
+            // <div class="example-div1"></div>
+
+            // <div id="container"></div>
+
+            // <div class="parent"></div>
+
+            // <ul class="list">
+            //     <li>JS</li>
+            //     <li>CSS</li>
+            //     <li>HTML</li>
+            // </ul>
+            // <button onclick="addItem()">Add List Item</button>
+
+            // <div class="element-to-remove">.element-to-remove</div>
+
+
+            // <div class="todo">
+            //     <h1>To-Do List</h1>
+
+            //     <div class="task-container">
+            //         <input type="text" id="taskInput" placeholder="Add a new task">
+            //         <button id="addTaskBtn">Add</button>
+            //     </div>
+
+            //     <ul id="taskList">
+            //         <!-- Tasks will be added here -->
+            //     </ul>
+            // </div>
+
+            // let selectedDiv = document.querySelector(".example-div1");
+            // selectedDiv.style.backgroundColor = "red";
+
+
+            // let selectedAllDiv = document.querySelectorAll(".example-div1");
+            // console.log(selectedAllDiv);
+
+            // selectedAllDiv.forEach(function (div) {
+            //     div.style.backgroundColor = "red";
+            // });
+
+            // Append single element in one call
+            // const container = document.querySelector('#container');
+            // container.style.backgroundColor = "wheat";
+            // const newDiv = document.createElement('div');
+            // newDiv.textContent = 'Newly created div';
+            // container.appendChild(newDiv);
+
+
+            // Append multiple elements in one call
+            // const parentElement = document.querySelector('.parent');
+            // parentElement.append('Text node', document.createElement('div'), 'More text');
+
+
+            // const list = document.querySelector('.list');
+            // let textNode = document.createTextNode("list item text value");
+            // let listItem = document.createElement('li');
+            // listItem.appendChild(textNode);
+            // list.append(listItem);
+
+            // const elementToRemove = document.querySelector('.element-to-remove');
+            // elementToRemove.remove();
+
+            // const childNodes = list.childNodes;
+            // console.log(childNodes);
+
+            // const children = list.children;
+            // console.log(children);
+
+
+            // let selectedDivParent = selectedDiv.parentElement;
+            // console.log(selectedDivParent);
+
+
+            // To-do
+            {
+                const taskInput = document.getElementById('taskInput');
+                //     const addTaskBtn = document.getElementById('addTaskBtn');
+                //     const taskList = document.getElementById('taskList');
+
+                //     // Function to create a new task item
+                //     function createTaskElement(taskText) {
+                //         const li = document.createElement('li');
+                //         const taskTextNode = document.createTextNode(taskText);
+                //         li.appendChild(taskTextNode);
+                //         const deleteButton = document.createElement('button');
+                //         deleteButton.classList.add('delete-button');
+                //         deleteButton.innerHTML = 'Delete';
+                //         li.appendChild(deleteButton);
+                //         // Add event listener to delete task when the button is clicked
+                //         deleteButton.addEventListener('click', function () {
+                //             li.remove();
+                //         });
+                //         return li;
+                //     }
+
+                //     // Function to add a new task to the list
+                //     function addTask() {
+                //         const taskText = taskInput.value.trim();
+                //         if (taskText === '') {
+                //             alert('Please enter a task.');
+                //             return;
+                //         }
+
+                //         // if (!/^\d+$/.test(taskText)) {
+                //         //     alert('Please enter only numbers.');
+                //         //     return;
+                //         // }
+
+                //         // if (!/^\d{1,10}$/.test(taskText)) {
+                //         //     alert('Please enter a valid mobile number with a maximum of 10 digits.');
+                //         //     return;
+                //         // }
+
+                //         if (!/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(taskText)) {
+                //             alert('Please enter a valid email address.');
+                //             return;
+                //         }
+
+                //         const taskElement = createTaskElement(taskText);
+                //         taskList.appendChild(taskElement);
+                //         taskInput.value = ''; // Clear the input field
+                //     }
+                //     addTaskBtn.addEventListener('click', addTask);
+                //     // Allow adding a task when the Enter key is pressed
+                //     taskInput.addEventListener('keydown', function (event) {
+                //         if (event.key === 'Enter') {
+                //             addTask();
+                //         }
+                //     });
+                // }
+            }
+        }
+
+        // ⭕⭕⭕⭕⭕⭕ -------- Creating projects -------- ⭕⭕⭕⭕⭕⭕
+        // 1. Slider libraries refer session 11
+        // 2. Toggling mobile hamburger menu with js ( the right way )
 
     </script>
 

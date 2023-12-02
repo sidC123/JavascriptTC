@@ -76,7 +76,7 @@ let person = {
             topics: [
                 { topic1: "Introduction" },
                 { topic2: "Props" },
-                { topic3: "Hooks" },
+                { topic3: "Form Validation" },
             ]
         },
     ]

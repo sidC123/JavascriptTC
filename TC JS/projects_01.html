@@ -51,7 +51,6 @@
                 console.log("number is odd");
             }
         }
-
         function fun1() {
             var inputValue = Number(document.getElementById("ip").value);
 
@@ -74,10 +73,13 @@
         // Overweight = 25- 29.9
         // Obesity = BMI of 30 or greater
 
-        function calculateBMI() {
+        var userHeight = Number(prompt("enter user height"))
+        var userweight = Number(prompt("enter user weight"))
+
+        function calculateBMI(weight, height) {
             // Get the user's input
-            var weight = parseFloat(document.getElementById("weight").value);
-            var height = parseFloat(document.getElementById("height").value);
+            // var weight = parseFloat(document.getElementById("weight").value);
+            // var height = parseFloat(document.getElementById("height").value);
 
             // ParseFloat takes string as input and gives a floting point number. it will neglect spaces and string after the digits. if 42.5zzz then 42.5 will be th output
 
@@ -85,7 +87,8 @@
 
             // Check if the input is valid
             if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
-                document.getElementById("result").innerHTML = "Please enter valid values for weight and height.";
+                // document.getElementById("result").innerHTML = "Please enter valid values for weight and height.";
+                alert("Please enter valid values for weight and height")
                 return; //It breaks the chain of events and function is stopped here only.
             }
 
@@ -96,12 +99,16 @@
             var category = "";
             if (bmi < 18.5) {
                 category = "Underweight";
+                alert("Underweight")
             } else if (bmi >= 18.5 && bmi <= 24.9) {
                 category = "Normal weight";
+                alert("Normal weight")
             } else if (bmi >= 25 && bmi <= 29.9) {
                 category = "Overweight";
+                alert("Overweight")
             } else {
                 category = "Obesity";
+                alert("Obesity")
             }
 
             // Display the result

@@ -64,13 +64,16 @@ let person = {
         {
             subject: "HTML",
             marks: 85
-        }, {
+        },
+        {
             subject: "CSS",
             marks: 20
-        }, {
+        },
+        {
             subject: "JS",
             marks: 65
-        }, {
+        },
+        {
             subject: "REACT",
             marks: 70,
             topics: [
@@ -81,3 +84,57 @@ let person = {
         },
     ]
 };
+
+// person.scoreCard[3].topics[3] = { topic4: "Hooks" };
+// console.log(person.scoreCard[3].topics);
+
+
+// Take input from user in number ( 1 - 100)
+// 80 - 100 : A grade
+// 60 - 80 : B grade
+// 40 - 60 : C grade
+// 20 - 40 : D grade
+
+// var userScore = Number(prompt("Enter your score"))
+// // var checkGrade = function (score) {
+// //     // console.log(score);
+// //     if (score >= 80 && score <= 100) {
+// //         console.warn(`student has scored A grade with ${score}`);
+// //     } else if (score >= 60 && score < 80) {
+// //         console.warn(`student has scored B grade with ${score}`);
+// //     } else if (score >= 40 && score < 60) {
+// //         console.warn(`student has scored C grade with ${score}`);
+// //     } else if (score >= 20 && score < 40) {
+// //         console.warn(`student has scored D grade with ${score}`);
+// //     } else {
+// //         console.warn(`student has failed with ${score}`);
+// //     }
+// // }
+// checkGrade(userScore)
+
+
+
+var userHeight = Number(prompt("enter user height"))
+var userweight = Number(prompt("enter user weight"))
+
+function calculateBMI(weight, height) {
+    // if (isNaN(weight) || isNaN(height) || weight <= 0 || height <= 0) {
+    //     alert("Please enter valid values for weight and height")
+    //     return
+    // }
+
+    var bmi = weight / (height * height);
+    console.log(bmi)
+
+    if (bmi < 18.5) {
+        alert("Underweight")
+    } else if (bmi >= 18.5 && bmi <= 24.9) {
+        alert("Normal weight")
+    } else if (bmi >= 25 && bmi <= 29.9) {
+        alert("Overweight")
+    } else {
+        alert("Obesity")
+    }
+}
+
+calculateBMI(userweight, userHeight);

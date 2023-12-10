@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nav and Tabs</title>
+    <style>
+        .tab-content {
+            display: none;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="nav">
+        <button href="#tab1">Tab 1</button>
+        <button href="#tab2">Tab 2</button>
+        <button href="#tab3">Tab 3</button>
+    </div>
+    <div id="tabs">
+        <div id="tab1" class="tab-content active">Content for Tab 1</div>
+        <div id="tab2" class="tab-content">Content for Tab 2</div>
+        <div id="tab3" class="tab-content">Content for Tab 3</div>
+    </div>
+
+
+    <script>
+        // NAV AND TABS
+        document.getElementById("nav").addEventListener("click", function (event) {
+            var index = Array.from(this.children).indexOf(event.target);
+            if (index >= 0) {
+                showTab(index);
+            }
+        });
+        function showTab(index) {
+            var tabContents = document.querySelectorAll(".tab-content");
+            tabContents.forEach((tabContent, i) => {
+                if (i === index) {
+                    tabContent.classList.add("active");
+                } else {
+                    tabContent.classList.remove("active");
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

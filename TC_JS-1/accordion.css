@@ -1,0 +1,107 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+ul,
+#buttonContainer {
+    display: flex;
+    padding: 20px;
+    gap: 15px;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+button {
+    padding: 50px;
+    font-size: 20px;
+    transition: all 0.4s;
+}
+
+li {
+    list-style: none;
+    padding: 0;
+    width: 100%;
+    height: 350px;
+    border: 5px solid wheat;
+}
+
+img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.active {
+    background-color: cornflowerblue;
+}
+
+a {
+    color: white;
+    font-size: 22px;
+}
+
+.box {
+    width: 500px;
+    height: 200px;
+    background-color: chocolate;
+    margin: 0 auto;
+}
+
+#mousemoveContainer {
+    width: 500px;
+    height: 300px;
+    background-color: red;
+    margin: 15px auto;
+}
+
+#mouseoverContainer {
+    width: 500px;
+    height: 300px;
+    background-color: green;
+    margin: 15px auto;
+}
+
+/* Add CSS styles for the accordion */
+.accordion {
+    margin: 100px;
+}
+
+.accordion-header {
+    cursor: pointer;
+    background-color: cyan;
+    padding: 10px;
+    color: #414141;
+    font-weight: 600;
+    transition: all 0.3s
+}
+
+.accordion-header:hover {
+    background-color: cadetblue;
+}
+
+.accordion-panel {
+    min-height: 0;
+    max-height: 0;
+    height: 0;
+    opacity: 0;
+    transition: all 0.5s;
+    padding: 0 10px;
+    background-color: darkcyan;
+}
+
+.activeAcc {
+    opacity: 1;
+    padding: 10px;
+    height: auto;
+    min-height: fit-content;
+    max-height: fit-content;
+}

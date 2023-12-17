@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Session 9 JS</title>
+</head>
+
+<body>
+    <h1>Session 9 JS</h1>
+
+    <button onclick="showMessage()">Inline event</button>
+
+    <button id="myButton1">Event from JS</button>
+
+    <button id="myButton2">DOM event handler</button>
+
+    <button id="myButton3">Add event listener</button>
+
+    <ul id="myList">
+        <li>Item 1</li>
+        <li>Item 2</li>
+        <li>Item 3</li>
+
+        <p>THis is p tag inside UL</p>
+    </ul>
+
+    <div class="myDiv">box 1</div>
+    <div class="myDiv">box 2</div>
+    <div class="myDiv">box 3</div>
+    <button id="myButton4">ADD_COLOR</button>
+
+    <input type="text" value="" onfocus="onFocus();" onblur="onBlur()" oninput="onChange(this)" id="demo10">
+
+    <select onchange="onChange(this)">
+        <option>Mumbai</option>
+        <option>Pune</option>
+        <option>Nasik</option>
+    </select>
+
+
+    <div style="background-color: blueviolet; padding: 100px; width: fit-content; cursor: pointer;"
+        ondblclick="funDbClick()" onmouseover="handleMouseOver()" onmouseout="handleMouseOut()"
+        onmousedown="handleMouseDown()" id="demo5">
+        CHECK MOUSE EVENTS
+    </div>
+
+    <div id="mouseMove"
+        style="width: 200px; height: 200px; border: 2px solid black; display: grid; place-content: center;">
+        <p id="mouseMoveResult"></p>
+    </div>
+
+    <textarea onselect="onSelect();" style="height: 300px;width: 400px">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of varraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+    </textarea>
+    <button id="demo9" style="display: none;">copy</button>
+
+    <div id="pyramid-container"></div>
+
+    <script src="./session9.js"></script>
+
+
+</body>
+
+</html>

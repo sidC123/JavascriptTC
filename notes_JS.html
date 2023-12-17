@@ -496,14 +496,14 @@
             //     return
             // }
 
-            var num = 10;
-            if (num < 10) {
-                console.log(`${num} is less than 10`);
-            } else if (num > 10) {
-                console.log(`${num} is greater than 10`);
-            } else {
-                console.log(`${num} is equal to 10`);
-            }
+            // var num = 10;
+            // if (num < 10) {
+            //     console.log(`${num} is less than 10`);
+            // } else if (num > 10) {
+            //     console.log(`${num} is greater than 10`);
+            // } else {
+            //     console.log(`${num} is equal to 10`);
+            // }
 
             // var result = add(5, 3);
             // console.log(result); // Output: undefined
@@ -1097,8 +1097,8 @@
 
             // ❓❓❓ Task 2: Get the src attribute value of an image with the ID "myImage" and log it to the console.
             {
-                var imageSrc = document.getElementById("myImage").getAttribute("src");
-                console.log(imageSrc);
+                // var imageSrc = document.getElementById("myImage").getAttribute("src");
+                // console.log(imageSrc);
             }
 
             // ❓❓❓ Task 3: Set the alt attribute of an image with the ID "myImage" to "A beautiful sunset."
@@ -1109,17 +1109,16 @@
 
         // ⭕⭕⭕⭕⭕⭕ -------- Applying event on element -------- ⭕⭕⭕⭕⭕⭕
         {
-            // <button id="myButton">Click me</button>
-
+            // Calling events:
             // function showMessage() {
             //     alert("Button clicked!");
             // }
 
-            // document.getElementById("myButton").onclick = showMessage;
-
-            // Calling events:
             // Inline HTML Attribute:
             // <button onclick="myFunction()">Click me</button>
+
+            // <button id="myButton">Click me</button>
+            // document.getElementById("myButton").onclick = showMessage;
 
             // Using DOM Event Handlers:
             // <button id="myButton">Click me</button>
@@ -1152,39 +1151,27 @@
             //     }
             // });
 
-            // 🌟🌟 Adding css over array of elements
-            // <div class="div1">box 1</div>
-            // <div class="div1">box 2</div>
-            // <div class="div1">box 3</div>
-            // <button onclick="fun1();">ADD_COLOR</button>
+            // --------------------------------------------------------- //
 
-            // var a = document.getElementsByClassName('div1');
-            // console.log(a)
+            // 🌟🌟 Adding css over array of elements
+            // <div class="myDiv">box 1</div>
+            // <div class="myDiv">box 2</div>
+            // <div class="myDiv">box 3</div>
+            // <button id="myButton4" onclick="fun1();">ADD_COLOR</button>
+
+            // var allDivs = document.getElementsByClassName('myDiv');
+            // console.log(allDivs)
             // function fun1() {
-            //     for (var i = 0; i < a.length; i++) {
+            //     for (var i = 0; i < allDivs.length; i++) {
             //         console.log(a[i]);
-            //         a[i].style.backgroundColor = "red";
-            //         a[i].className += " new_class"
+            //         allDivs[i].style.backgroundColor = "red";
+            //         allDivs[i].className += " new_class"
             //     }
             // }
 
-            // <div class="style_div" ondblclick="funDbClick();" id="demo5">ondblclick</div> 
-
-            // <input type="text" name="input1" placeholder="Enter Your Name" oninput="onInput();" id="demo6"> 
+            // ---------------------------------------------------------------- //
 
             // <input type="text" onfocus="onFocus();" id="demo10"> 
-
-            // <input onblur="onBlur();" value="On blur input" id="demo7"> 
-
-            // <textarea onselect="onSelect();" style="height: 300px;width: 400px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of varraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-            // </textarea>
-            // <button id="demo9" style="display: none;">copy</button> 
-
-            // <div class="style_div" id="demo11" oncopy="onCopy();">Lorem Ipsum is simply dummy text of the printing and
-            //     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
-            //     unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
-            // </div> 
-
 
             // <input type="text" name="" oncut="fun11();">
             // <input type="text" name="" onpaste="fun12();"> 
@@ -1197,79 +1184,110 @@
 
             // <input type="text" name="" onchange="onChangeInput(this)"> 
 
+
+
             // More Events
             // 1.Mouse Events
-            function handleClick() {
-                console.log("Button clicked!");
-            }
+            {
+                // <div class="style_div" ondblclick="handleClick();" id="demo5">CHECK MOUSE EVENTS</div>
+                // function handleClick() {
+                //     console.log("Button clicked!");
+                // }
 
-            function funDbClick() {
-                document.getElementById('demo5').style.backgroundColor = "blue";
-            }
+                // function funDbClick() {
+                //     console.log("Button Double clicked!");
+                //     document.getElementById('demo5').style.backgroundColor = "blue";
+                // }
 
-            function handleMouseOver() {
-                console.log("Mouse over the div!");
-            }
+                // function handleMouseOver() {
+                //     console.log("Mouse over the div!");
+                // }
 
-            function handleMouseOut() {
-                console.log("Mouse out of the div!");
-            }
+                // function handleMouseOut() {
+                //     console.log("Mouse out of the div!");
+                // }
 
-            function handleMouseDown() {
-                console.log("Mouse button pressed!");
-            }
+                // function handleMouseDown() {
+                //     console.log("Mouse button pressed!");
+                // }
 
-            function handleMouseUp() {
-                console.log("Mouse button released!");
-            }
+                // function handleMouseUp() {
+                //     console.log("Mouse button released!");
+                // }
 
-            // mousemoveContainer.addEventListener('mousemove', function (event) {
-            //     const randomNumber = Math.floor(Math.random() * 100);
-            //     mousemoveResult.textContent = `Random Number: ${randomNumber}`;
-            // });
+                // <div id="mouseMove"
+                //     style="width: 200px; height: 200px; border: 2px solid black; display: grid; place-content: center;">
+                //     <p id="mouseMoveResult"></p>
+                // </div>
+                // var mousemoveContainer = document.getElementById("mouseMove")
+                // var mouseMoveResult = document.getElementById("mouseMoveResult")
+                // mousemoveContainer.addEventListener('mousemove', function (event) {
+                //     var randomNumber = Math.floor(Math.random() * 100);
+                //     mouseMoveResult.textContent = `Random Number: ${randomNumber}`;
+                //     console.log(randomNumber);
+                // });
+            }
 
             // 2.On input event
-            function onInput() {
-                var input = document.getElementById('demo6');
-                console.log(input.value);
+            {
+                // <input type="text" name="input1" placeholder="Enter Your Name" oninput="onInput();" id="demo6"> 
+                // function onInput() {
+                //     var input = document.getElementById('demo6');
+                //     console.log(input.value);
+                // }
             }
 
             // 3.On Focus event
-            function onFocus() {
-                var input = document.getElementById('demo7');
-                console.log("input under focus");
-            }
+            // <input onblur="onBlur();" value="On blur input" id="demo7"> 
+
+            // function onFocus() {
+            //     var input = document.getElementById('demo7');
+            //     console.log("input under focus");
+            // }
 
             // 4.On blur event
-            function onBlur() {
-                alert("onblur input event");
-                document.getElementById('demo7').style.backgroundColor = "red";
-            }
+            // function onBlur() {
+            //     alert("onblur input event");
+            //     document.getElementById('demo7').style.backgroundColor = "red";
+            // }
 
             // 5.On select event
-            function onSelect() {
-                document.getElementById('demo9').style.display = "block";
+            {
+                // <textarea onselect="onSelect();" style="height: 300px;width: 400px">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of varraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                // </textarea>
+                // <button id="demo9" style="display: none;">copy</button> 
+
+                // function onSelect() {
+                //     document.getElementById('demo9').style.display = "block";
+                // }
             }
 
-            // 6.On copy event
-            function onCopy() {
-                document.getElementById('demo11').style.color = "red";
-            }
+            {
+                // 6.On copy event
+                // <div class="style_div" id="demo11" oncopy="onCopy();">Lorem Ipsum is simply dummy text of the printing and
+                //     typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an
+                //     unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only
+                // </div> 
 
-            // 7.On cut event
-            function fun11() {
-                alert("on cut event triggered");
-            }
+                // function onCopy() {
+                //     document.getElementById('demo11').style.color = "red";
+                // }
 
-            // 8.On paste event
-            function fun12() {
-                alert("on paste event triggered");
+                // 7.On cut event
+                // function onCut() {
+                //     alert("on cut event triggered");
+                // }
+
+                // 8.On paste event
+                // function onPaste() {
+                //     alert("on paste event triggered");
+                // }
             }
 
             // 9.On change event
-            function onChange(ele) {
-                alert("Selected value: " + ele.value);
-            }
+            // function onChange(ele) {
+            //     alert("Selected value: " + ele.value);
+            // }
 
             function onChangeInput(ele) {
                 console.log("Input value: " + ele.value);
@@ -1288,10 +1306,10 @@
 
         // ⭕⭕⭕⭕⭕⭕ -------- Nested loops -------- ⭕⭕⭕⭕⭕⭕
         {
-            // for (var i=0; i < outer.length; i++){
+            // for (var i = 0; i < outer.length; i++) {
             //     // outer operations;
 
-            //     for (var j=0; j < inner.length; j++){
+            //     for (var j = 0; j < inner.length; j++) {
             //         // inner operations
             //     }
             // }
